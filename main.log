@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.9)  24 SEP 2019 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.9)  1 OCT 2019 16:17
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
@@ -1811,7 +1810,7 @@ texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/t
 exlive/2018/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb>
-Output written on main.pdf (4 pages, 57218 bytes).
+Output written on main.pdf (4 pages, 57220 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
