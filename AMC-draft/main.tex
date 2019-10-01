@@ -1,0 +1,597 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{fouriernc} % Use the New Century Schoolbook font
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage[hyphens]{url}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
+\usepackage[affil-it]{authblk}
+\usepackage{floatflt}
+\usepackage{enumitem}
+\usepackage{subfigure}
+% make the clickable hyperlinks look nicer
+\usepackage{color}
+	\definecolor{darkred}{rgb}{0.5,0,0}
+	\definecolor{darkblue}{rgb}{0,0,0.5}
+	\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+	 \definecolor{armygreen}{rgb}{0.0, 0.26, 0.15}
+%\usepackage{hyperref}   % clickable hyperlinks in the pdf
+\hypersetup{colorlinks,
+linkcolor=darkblue,
+citecolor=darkred,
+urlcolor=cyan}  % switch to black for printing all text in black
+\usepackage{authblk}
+\usepackage{tabto}
+\usepackage{subfloat}
+\usepackage{verbatim} 
+\usepackage{color}   
+\usepackage{wrapfig}    % for Blair's appendix
+\usepackage{pdfpages} % to include multipage pdfs
+\usepackage{todonotes} % to highlight todos [disable] to get rid of the comments
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{tabulary}
+\usepackage[separate-uncertainty=true]{siunitx}
+
+%Ruslan's packages
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{enumitem}
+\newlist{RSenumerate}{enumerate}{1}
+\setlist[RSenumerate]{label=\textcolor{darkblue}{\textbf{RS \arabic*}}}
+
+
+%\usepackage{fancyhdr}
+% headers
+%\pagestyle{headings}
+%\usepackage[font={small,sf}, labelfont=bf]{caption} % make smaller and italic picture captions
+%\lhead{UCN}
+%\chead{\leftmark}
+%\rhead{CDR}
+
+\setcounter{tocdepth}{3}
+
+
+%the following setup to define subsubsubsections via the paragraph command
+\usepackage{titlesec}
+%\cftsetindents{section}{1em}{3em}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% change numbering to per section, not total
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+% define more characters where a url can be broken
+\def\UrlBreaks{\do\/\do-}
+
+% define commands to quote text later in the same document
+\newcommand\declquotedtext[2]{\expandafter\def\csname quotedtext@#1 \endcsname{#2}}
+\newcommand\defquotedtext[2]{\declquotedtext{#1}{#2}#2}
+\newcommand\usequotedtext[1]{\csname quotedtext@#1 \endcsname}
+%usage
+%  \defquotedtext{test}{This is a test text.}
+%  \declquotedtext{later}{And this is a text declared for later use.}
+%  \usequotedtext{test}
+
+% print line numbers in the margin
+%\usepackage[pagewise]{lineno}
+%\linenumbers
+
+
+\hoffset=-0.25in
+\voffset=0in
+\topmargin=-0.25in
+\topskip=0in
+\headheight=12pt
+\headsep=12pt
+\textwidth=7in
+\textheight=9.17in
+\footskip=30pt
+\oddsidemargin=0in
+\evensidemargin=0in
+
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+    \setlength{\belowcaptionskip}{-5pt}
+
+%guide coating section definitions
+\newcommand{\nf}{$^{58}$Ni }
+\newcommand{\cusixfive}{$^{65}$Cu }
+\newcommand{\fermipot}{Fermi Potential }
+\newcommand{\degree}{\ensuremath{^\circ} }
+
+%running fraction with slash - requires math mode.
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+%Jeffs sensors graphic command
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+
+
+\author[3,4]{S. Ahmed}
+\author[3,4]{T. Andalib}
+\author[3]{C.P.~Bidinosti}
+\author[4]{J.~Birchall}
+\author[3,4]{M.~Das}
+\author[5]{C.~Davis}
+\author[5]{E.~Cudmore}
+\author[2]{A.~Ezzat}
+\author[5]{B.~Franke}
+\author[4]{M.~Gericke}
+\author[3,4]{S.~Hansen-Romu}
+\author[6]{K.~Hatanaka}
+\author[3]{B.~Jamieson}
+\author[5]{K.~Katsika}
+\author[1]{S.~Kawasaki}
+\author[5,11]{T.~Kikawa}
+\author[10]{M.~Kitaguchi}
+\author[5,6]{A.~Konaka}
+\author[5]{F.~Kuchler}
+\author[7]{E. Korkmaz}
+\author[3,4]{M.~Lang} 
+\author[5]{L.~Lee}
+\author[5,3]{T.~Lindner}
+\author[1]{Y.~Makida}
+\author[4]{J.~Mammei}
+\author[3]{R. Mammei}
+\author[5]{C.~Marshall}
+\author[3]{J.W.~Martin}
+\author[5]{R. Matsumiya}
+\author[9]{K.~Mishima}
+\author[2]{T.~Momose}
+\author[5]{R.~Nagimov}
+\author[1]{T.~Okamura}
+\author[4]{S.~Page}
+\author[5,8]{R.~Picker}
+\author[6,5]{E.~Pierre}
+\author[5]{W.D.~Ramsay}
+\author[3,4]{L.~Rebenitsch}
+\author[5]{W.~Schreyer}
+\author[10]{H.~Shimizu}
+\author[8]{S.~Sidhu}
+\author[8]{J.~Sonier}
+\author[6]{I. Tanihata}
+\author[2,5]{S. Vanbergen}
+\author[4,5]{W.T.H.~van~Oers}
+\author[1]{Y.~Watanabe}
+
+
+%
+\affil[1]{KEK, Tsukuba, Ibaraki, Japan}
+\affil[2]{The University of British Columbia, Vancouver, BC, Canada}
+\affil[3]{The University of Winnipeg, Winnipeg, MB, Canada}
+\affil[4]{The University of Manitoba, Winnipeg, MB, Canada}
+\affil[5]{TRIUMF, Vancouver, BC, Canada}
+\affil[6]{RCNP Osaka University, Ibaraki, Osaka, Japan}
+\affil[7]{The University of Northern BC, Prince George, BC, Canada}
+\affil[8]{Simon Fraser University, Burnaby, BC, Canada}
+\affil[9]{KEK, Tokai, Japan}
+\affil[10]{Nagoya University, Nagoya, Japan}
+\affil[11]{Kyoto University, Kyoto, Japan}
+\makeatletter
+
+
+
+\begin{document}
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+	\centering % Centre everything on the title page
+	
+	\scshape % Use small caps for all text on the title page	
+    
+     \includegraphics[width=0.28\textwidth]{graphics/TRIUMF_Logo_Blue} 
+    \includegraphics[width=0.21\textwidth]{graphics/KEK}
+    \includegraphics[width=0.18\textwidth]{graphics/RCNP}
+    \includegraphics[width=0.2\textwidth]{graphics/UW_left-stack_rgb-black.png} \\
+    \vspace{6pt}
+    \includegraphics[width=0.18\textwidth]{graphics/ubc_3}
+    \includegraphics[width=0.2\textwidth]{graphics/UM_l_bwn_horz.png}
+    \includegraphics[width=0.12\textwidth]{graphics/SFU.png}   
+    \includegraphics[width=0.22\textwidth]{graphics/nagoya} 
+    \includegraphics[width=0.3\textwidth]{graphics/UNBC}
+       
+	\vspace*{3\baselineskip} % White space at the top of the page
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+   % \rule{\textwidth}{1.6pt} %\vspace*{-\baselineskip}\vspace{3.2pt}
+	%\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{0.75\baselineskip} % Whitespace above the title
+	
+	{\huge Conceptual Design Report for the Next Generation nEDM Spectrometer at TRIUMF\\} % Title
+	
+	\vspace{0.75\baselineskip} % Whitespace below the title
+	
+	%\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+	%\rule{\textwidth}{1.6pt} % Thick horizontal rule
+	
+	\vspace{2\baselineskip} % Whitespace after the title block
+	
+	%------------------------------------------------
+	%	Subtitle
+	%------------------------------------------------
+	
+	%!!! Please check your name and affiliation in the author list below !!! % Subtitle or further description
+	
+    The TUCAN collaboration -- \today
+    
+	\vspace*{3\baselineskip} % Whitespace under the subtitle
+	
+	%------------------------------------------------
+	%	Editor(s)
+	%-- ----------------------------------------------
+	
+		
+        
+ 	{\scshape \@author \\} 
+     \vspace*{3\baselineskip}
+     
+	
+
+\end{titlepage}
+
+
+
+
+
+%\vspace{5cm}
+\clearpage
+\vspace*{19cm}
+\noindent
+{\large \textbf{Revision history}} \\
+\vspace{0.1cm}
+
+% \noindent
+% \textbf{March 29, 2018} - Initial release \\
+% \textbf{April 6, 2018} - First minor revision \\
+% \textcolor{white}{bla} Corrected affiliation on front page \\
+% \textcolor{white}{bla} Revised wording in Sec.~\ref{sec:ld2} \\
+% \textcolor{white}{bla} Fixed axis in  Fig.~\ref{fig:fillTime} \\
+% \textcolor{white}{bla} Fixed various figure references \\
+
+
+
+
+
+
+
+\clearpage
+\tableofcontents
+ \clearpage
+ \subsection{Useful links}
+ CDR roadmap\\
+  \url{https://docs.google.com/spreadsheets/d/1T6mxlEShc0R1MbVmCwGfq_bT3S_GoU7iDcxo9FRMXd8/edit?usp=sharing}
+  
+  Trade off matrix\\
+  \url{https://triumfoffice365-my.sharepoint.com/:x:/g/personal/cgibson_triumf_ca/EXXiDrv1lRZEpL-5OQGlmTcB0eMMGNFj_SLDwc4fvSQH6w?e=Pd8yhP}
+  
+
+ \clearpage
+\section{Superconducting Magnet {\color{red}(KH)} {\color{darkgreen}(Rev:)}}
+\label{sec:AMC}
+\input{./sections/AMC.tex}
+
+
+\subsection{Overview}
+The proposed nEDM measurement will measure magnetic field drifts through use of a cohabiting $^{199}$Hg atomic vapour magnetometer, which occupies the EDM cell volume alongside the UCN during the experimental cycle.  The atomic vapor is spin-polarized prior to injection and then subjected to a similar RF pulse as the UCN.  Precession of the $^{199}$Hg atoms will be observed through monitoring the transmission of circular-polarized resonant UV light through windows on the cell.  The purpose of the comagnetometer is to measure the atomic precession during the entire nEDM free precession time, and to make ONE measurement of the time-averaged precession frequency (with associated uncertainty) each cycle.
+
+\subsection{Requirements}
+\begin{itemize}
+\item Comag must reach a specified accuracy.  Sometimes this is specified as an uncertainty in fT.  In practice, a precession frequency and its associated uncertainty will be the reported quantity.  Specify whether we have/need a per-cycle accuracy or an averaged over 1000's cycles accuracy.
+\item Number density of $^{199}$Hg is restricted by:
+\begin{itemize}
+\item Neutron capture cross section
+\item Optical pumping efficiency
+\end{itemize}
+\item Probe UV power must be low enough to not significantly depolarize atoms during the cycle.  (Baker2014: ILL photon flux probably 1E12-1E13/s)
+\item list space requirements for an optics table, and inside the MSR.  The MSR (e.g. see msr-may23 by Aleksey Sher) is a 250cm wide, 4layer box, inner layer 200cm wide.
+\item How big should the EDM cell windows be for UV transmission?  What is the effect of changing beam size through the cell?  (one could be transit time broadening; what is the effect on precession signal?)
+\item How stable should the wavelength be?  (it might affect the signal amplitude, and consequently the fit noise).  Do we need DAVLL?  (Komposch2017, Fertl say we need 1 MHz stability to avoid intensity-dependent light shifts.
+\end{itemize}
+
+
+\subsection{Laser subsubsystem}
+We generate UV light at 253.7~nm by frequency doubling green light from an external cavity diode laser (ECDL, MOGLabs CEL).  In the ECDL, a green laser diode at 507.4~nm (Nichia NDE4116E) and broad linewidth is narrowed by an approx. 10~cm external cavity consisting of output coupler and intracavity filter.  Feedback causes the diode to emit a single frequency mode with 218~kHz linewidth.  The output power at 507.4~nm is up to 64~mW, as shown in  Fig.~\ref{fig:power_vs_current}.  The stated modehop-free frequency tuning range is 17.5~GHz.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width= 0.6\textwidth]{./graphics/comag/powervscurrent.png}
+\caption{ECDL output power vs. injection current.}
+\label{fig:power_vs_current}
+\end{center}
+\end{figure}
+
+UV light is generated from the green light by frequency doubling.  We direct the laser to circulate inside a bowtie cavity containing 4 mirrors and a crystal of $\beta$-barium borate (BBO), oriented for second harmonic generation (SHG).  The cavity is built to accept a Gaussian TEM$_{00}$ spatial mode, and is locked to the frequency of the green laser by a Pound-Drever Hall (PDH) scheme.  A piezoelectric transducer (PZT) behind one of the mirrors performs the PDH lock.  Conversion to UV occurs in the BBO crystal by a non-linear process.  The UV conversion was measured before for a different input laser: for an input of 60~mW we calculate that at least 1~mW UV will be generated.  For comparison, the UV power requirements are approximately 20~$\mu$W for each polarization cell and 5-10~$\mu$W for each probe beam.  If DAVLL is used for frequency stability, the power requirement is 300~$\mu$W-1~mW, depending on beam diameter.
+
+
+\subsubsection{Laser Stability}
+The frequency stability of the UV probe laser affects the accuracy of the magnetic field measurement.  In particular, a small misalignment of the probe beam away from horizontal can lead to a measurable frequency shift through the AC Stark effect.  This is particularly problematic if the misalignment correlates in any way with the high voltage direction, as it generates a false EDM.  PSI claims \cite{Fertl2013} that the laser frequency should be stabilized to the $10^{-9}$ level, or to within 1~MHz, in order to make the effect negligible.  In contrast, the measured frequency uncertainty of the free-running ECDL is approximately 100~MHz.
+
+\subsubsection{DAVLL}
+In order to generate 1~MHz frequency stability, we will follow the locking technique used at PSI and known as Sub-Doppler Dichroic Atomic Vapour Laser Lock (SD-DAVLL).  In this technique, the laser is locked to a spectral feature in a separate Hg vapour cell under magnetic field.  The Doppler broadening in this cell is of order 1~GHz, but a sub-Doppler feature known as the Lamb dip can be generated by saturation absorption spectroscopy.  This requires a pump beam intensity given by $I_{saturation} = 30.6$~mW/cm$^2$.  The Lamb dip can be made as narrow as the natural lifetime broadening = 1.3~MHz.
+
+In order to generate the dispersion-like error signal used for locking, the cell will be subjected to a weak magnetic field to induce dichroism. A Helmholtz coil (R=40~mm, 25 turns, 0.56~mA/T) will Zeeman split the Hg magnetic sublevels by approximately 5~kHz.  The two sublevels absorb circular polarized light of opposite handedness.  We will probe the cell with linear polarized light containing equal amount of both circular polarizations, and compare the differential absorption of each using a polarization analyzer (quarter wave plate) and a balanced photodetector.  Fig.~\ref{fig:dispersionsignal} shows that for the stated Zeeman splitting, a dispersion-like signal can be generated which has a useful slope (error signal) over 0.6~MHz.  If necessary, we can go one step further: by modulating the laser frequency and using a lock-in amplifier, such as is done at PSI, we can generate the second derivative of the signal free from fluctuations in DC offset. 
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width= 0.6\textwidth]{./graphics/comag/dispersionsignal.png}
+\caption{Simulation of the dispersion signal generated by 5~kHz Zeeman splitting of an absorption line with FWHM 1.3~MHz.}
+\label{fig:dispersionsignal}
+\end{center}
+\end{figure}
+
+\subsubsection{Beam Transport}
+Distance, how many mirrors, consider fiber, losses, position of breadboards external to MSR.
+
+\subsection{Hg vapour source subsubsystem}
+NOTE: Horras12 proposed a shutter between pol.chamber and Hg source.
+The purpose of this subsystem is to produce isotopically enriched $^{199}$Hg vapour which will then be optically pumped and injected into the EDM cell.  The source of the vapour can be a metallic bead of $^{199}$Hg, or it can come from thermal decomposition of  $^{199}$HgO.  The latter is the preferred option, as the production rate of $^{199}$Hg vapour can be controlled by a heater temperature; in contrast, the vapour pressure of Hg (0.26 Pa at room temperature) is much higher than the desired partial pressure in the prepolarizing cell or EDM cell, so using metallic Hg would require us to cool a droplet of metallic Hg to -30$^\circ$C.  Additionally, it was noted at PSI that the flux of atoms from a metallic bead would fluctuate depending on surface conditions, but was more repeatable when heating HgO powder.
+
+The system includes:
+\begin{itemize}
+\item a heated reservoir containing HgO
+\item a heater (up to 200-300 $^\circ$C)
+\item a pressure gauge (optional)
+\end{itemize}
+
+Some rates can be estimated from [Lvov1999].  The rate constant for HgO decomposition follows an Arrhenius dependence at high temperature (400-500$^\circ$C) for the decomposition of HgO, and also at low temperature (160-220$^\circ$C) for the reaction byproduct Hg$_2$O.  The low-temperature rate constant $k$ varies between 1-6$\times10^{-7}$ kg m$^{-2}$ min$^{-1}$ depending on temperature.  For a particle of radius 5um and mass 5.8$\times10^{-12}$ kg, the emitted flux is 1.5$\times10^{8}$ atoms min$^{-1}$. From [Fertl2013], we can calculate that there are approximately 5$\times10^{14}$ Hg atoms in the EDM cell, meaning that in order to fill this cell every 3 minutes, we need at least 7mg of HgO.  In order to fill two EDM cells, 14mg is needed.  We estimate that the HgO in the reservoir will be completely used up in 600-1800 hours of continuous operation, consuming up to 0.56mg/day. The cost of isotopically pure $^{199}$HgO was US\$71/mg based on a 2017 quote from Oak Ridge.  Therefore the approximate operational cost to produce $^{199}$Hg vapour is \$20-60/day.
+
+\subsection{Prepolarizer cell subsubsystem}
+\begin{itemize}
+\item where are the vacuum connections made?
+\item previous drawings show different types of polarizer optics (Brewster plates, cubes), usually inside the vacuum.  Is this necessary?
+\item specify reasons for vertical alignment and size (eg. could we have a small beam diameter pumping a large diameter but squat pumping cell?
+\end{itemize}
+
+The prepolarizer cell at TRIUMF will be based upon the ILL/PSI design.  There will be two cells, one for each precession chamber.  In each, Hg atoms from the HgO source will enter a cylindrical glass cell (7cm O.D., 29cm length) with UVFS windows.  The cylinder axis is oriented parallel to the $B_0$ field. Circular polarized light is introduced to the cell through large-diameter optics (e.g. 50mm thin film polarizer, Eksma Optics and 50mm QWP, Tower Optics, and UV lenses).  Polarization is acheived through a continuous irradiation with 253.7nm UV light, such that while one precession measurement is underway, the next batch of Hg is being polarized.  The cell will be coated with a silane coating (Surfasil) to prevent depolarizing wall collisions.  The previous coating used at PSI (Fomblin oil) was found to trap water molecules which contaminated the precession cell and led to shorter $T_2$ times.  Surfasil was found to have comparable performance to Fomblin oil without introducing contamination.
+
+Each polarization batch consists of on average $5\times10^{14}$ atoms.  The mean free path in the cell is longer than 1m, such that interatomic collisions are negligible, and wall collisions are the limiting factor for depolarization.  Larger cells lead to a lower depolarization rate and higher overall polarization.  PSI obtains a typical Hg polarization of 20-40\% for a laser power of 5$\mu$W.
+
+\subsection{nEDM/Precession cell subsubsystem}
+Hg shutter description, RF coil requirements, T2 under high voltage.
+Note: Zenner2013UCN shutter: In the closed position it should be tight to not
+lose Hg or UCN,
+
+\subsection{Detector and analysis subsubsystem}
+PMT, DAQ, fitting methods, relative uncertainty, light shifts and other systematics.
+
+\subsection{DAQ/Comag Polarizer Interface Requirements}
+
+Q1: Will your subsystem be providing a data stream (over some network connection) to the DAQ/controls?  Or will you be providing an analog signal(s) that you want digitized by some DAQ/controls module? 
+If you are providing only a data stream, then you can skip question 2.
+
+Most important is precise digitization of the analog signal (AC and DC levels) from each Hg detection PMT, before and during the UCN free precession time.
+
+We should also record laser status (power, lock ON/OFF), and HgO heater temperature/pressure conditions.  These however would be slow monitoring.
+
+Q2: If you are providing analog signals to the DAQ/controls, what is the number of signals?  Provide the following information (perhaps in a table) if you have many types of signal.
+
+Baseline design is two analog signals (one for each Hg PMT).  Ideally room for eventual expansion to two additional Xe precession signals.
+
+Q2.1: What timebase (ie, samples per second) and precision do you expect for the digitization?
+
+Undetermined, but possibly up to 50kHz and 24-bit resolution.  PSI started with two 12-bit (and later 16-bit) ADC for each PMT signal's DC and AC components (4 total ADC channels).  Later they upgraded to 24-bit ADC, and don't separate AC and DC components.  The data is sampled at approx. 50kHz initially and downsampled to 100Hz; they claim denser sampling does not improve the fitting precision.
+
+Q2.2: Are the signals part of the main EDM sequence or are they more like environmental condition monitoring?  
+
+Part of the sequence.
+
+Q2.3: If you have already picked out a digitizer you would like to use, then please list it.
+
+currently used at PSI: National Instruments PXI-4461 24-bit ADC
+previously used at PSI: 16-bit AD7680 integrated circuit on a custom PCB with FPGA(XilinxXC3S400fg456).
+
+
+Q3: Does your subsystem require a digitizer that is referenced to a central atomic clock?
+
+Yes- for the precession signals.
+
+Q4: Does your subsystem have controls or gas handling like equipment?
+
+Controls include: HgO oven temperature and pressure, and Hg valve connecting each prepolarizing cell to EDM cell.  Opening the valve for 2s will be part of the EDM sequence.
+
+Q4.1 If yes does your equipment require PLC-type interlocks to ensure correct/reliable operation?  Ie is there equipment-protection, safety or operational reasons why controls needs to be done with a PLC-type system? Or is it sufficient to have a computer program doing the control?
+
+Not aware of any reason for PLC.
+
+\subsection{Previous accomplishments}
+\begin{itemize}
+\item Design of an OPSL-based laser stable at either Hg or Xe freq.
+\item Construction of an automated Xe SEOP and freezeout system at UWinn
+\item Two photon spectroscopy of unpolarized nat Xe down to (10mTorr??)
+\item Testing of a 507nm ECDL and SHG for Hg spectroscopy
+\end{itemize}
+
+\clearpage
+\section{Ambient Magnetic Field Control  {\color{red}(BF, HJO?)}}
+\input{./sections/012AMC}
+
+ \clearpage
+\section{nEDM Services; Thermal \& Vibration stabilization, etc. {\color{red}(CAD)} {\color{darkgreen}(Rev: )}} 
+\label{sec:services}
+\input{./sections/013Services}
+
+
+%\input{./sections/000ExecSum}
+
+
+
+ \clearpage
+\section{DAQ \& control: fast and slow control, Data structure, data/shift taking(?), and analysis strategy, automation...  {\color{red}(TL ?? \& KM ?? )} {\color{darkgreen}(Rev:)}} 
+\label{sec:DAQ}
+%\input{./sections/000ExecSum}
+\input{./sections/14DaqHardware}
+
+\input{./sections/141Analysis}
+
+
+ \clearpage
+\section{nEDM measurement sequence and timing
+{\color{red}(BF? FK?  )} {\color{darkgreen}(Rev:)}} 
+\label{sec:DAQ}
+
+
+ \clearpage
+\section{Interfaces {\color{red}(RP BF)} {\color{darkgreen}(Rev: )}} 
+\label{sec:interfaces}
+\input{./sections/16Interfaces}
+% eg colinearity of B field and E field
+% eg guiding fields for polarization conservation
+
+
+
+\clearpage
+%\section{References}
+\bibliographystyle{apalike} % or alpha
+%\bibliography{CDRbib}
+\begin{thebibliography}{9}
+\bibitem{grigoriev1997} S.V. Grigoriev, A.I. Okorov, and V.V. Runov. "Peculiarities of a broadband adiabatic flipper of cold neutrons," Nucl. Instr. and Meth. A {\bf 384} (1997) 541.
+
+
+%%%%% References for Inner coil systems section %%%%%
+\bibitem{CB_JMR2005} C.P.\ Bidinosti, I.S.\ Kravchuk,  M.E.\ Hayden, ``Active shielding of cylindrical saddle-shaped coils: Application to wire-wound RF coils for very low field NMR and MRI''  J.\ Magn.\ Reson.\ \textbf{177} 31 (2005).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{NIMnedm1990s}
+P. Harris et~al.,
+\newblock Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment 440 (2000)
+  479 .
+
+\bibitem{1977nedm}
+W.B. Dress et~al.,
+\newblock Phys. Rev. D 15 (1977) 9.
+
+\bibitem{n2EDM2019}
+C. Abel et~al.,
+\newblock arXiv: 1811.02340v2 .
+
+\bibitem{nedmGatchina}
+A.P. Serebrov et~al.,
+\newblock Phys. Rev. C 92 (2015) 055501.
+
+\bibitem{He_XeEDM2019}
+N. Sachdeva et~al.,
+\newblock arXiv:1902.02864v1 .
+
+\bibitem{2014_Munich_MSR}
+I. Altarev et~al.,
+\newblock Review of Scientific Instruments 85 (2014) 075106.
+
+\bibitem{2015_Munich_MSR}
+I. Altarev et~al.,
+\newblock Journal of Applied Physics 117 (2015) 183903.
+
+\bibitem{2015_Munich_degaus}
+I. Altarev et~al.,
+\newblock Journal of Applied Physics 117 (2015) 233903.
+
+%%%% SSA and detectors references
+\bibitem{Helaine:phd}
+Victor Helaine, 
+\newblock {{Mesure du moment dipolaire electrique du neutron: analyse simultanee de spin et analyse preliminaire de donnees}},
+\newblock PhD thesis, Universite de Caen thesis, 2014.
+
+\bibitem{Caen:ssapaper}
+S. Afach et~al.,
+\newblock A device for simultaneous spin analysis of ultracold neutrons
+\newblock Eur. Phys. J. A 51 (2015) 143.
+
+\bibitem{Ban09}
+G. Ban et~al.,
+\newblock {UCN} detection with $^6${Li}-doped glass scintillators
+\newblock  Nucl. Instr.and Meth A 611 (2009) 280.
+
+\bibitem{Ban16}
+G. Ban et~al.,
+\newblock Ultracold neutron detection with Li-6-doped glass scintillators NANOSC: A fast ultracold neutron detector for the nEDM experiment at the Paul Scherrer Institute
+\newblock Eur. Phys. J. A 52 (2016) 326.
+
+\bibitem{Jamieson17}
+B. Jamieson et~al.,
+\newblock Characterization of a scintillating lithium glass ultra-cold neutron detector
+\newblock Eur. Phys. J. A 53 (2017) 3.
+
+\bibitem{Atkinson1990}
+M. Atkinson,
+\newblock Nucl. Instrum. Methods A 254 (1987) 500. 
+
+\bibitem{Brollo1990}
+S. Brollo, G. Zanella, R. Zannoni,
+\newblock Nucl. Instrum. Methods A 293 (1990) 601.
+
+\bibitem{Shigayasu1990}
+Shigayasu Sakamoto 
+\newblock Nucl. Instrum. Methods A 299 (1990) 182.
+
+\bibitem{Komposh2017}
+S. Komposh
+\newblock Realization of a high-performance laser-based mercury magnetometer for neutron EDM experiments,
+\newblock PhD thesis, ETH Zurich, 2017.
+
+\end{thebibliography}
+
+\clearpage
+\section{Appendices}
+%\input{./sections/090CryoBasics}
+
+
+\section{Satelite facilities: Xe EDM and guide coating facility {\color{red}(TM RMam)} {\color{darkgreen}(Rev: )}} 
+\label{sec:satellite}
+\input{./sections/GCfacility.tex}
+
+
+\clearpage
+\section{Auxiliary magnetometers: Squids, inner mapper {\color{red}(FK, BF, JWM, HJO?)}}
+\label{sec:auxmag}
+\input{./sections/auxmag}
+
+
+\clearpage
+\section{$B_1$ characterization and Bloch simulations}
+\label{sec:B1Bloch}
+\input{./sections/B1_Bloch}
+
+\clearpage
+%\listoffigures 
+%\listoftables
+
+ \end{document}
+
+
+
+
+
+

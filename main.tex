@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{fouriernc} % Use the New Century Schoolbook font
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage[hyphens]{url}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
+\usepackage[affil-it]{authblk}
+\usepackage{floatflt}
+\usepackage{enumitem}
+\usepackage{subfigure}
+% make the clickable hyperlinks look nicer
+\usepackage{color}
+	\definecolor{darkred}{rgb}{0.5,0,0}
+	\definecolor{darkblue}{rgb}{0,0,0.5}
+	\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+	 \definecolor{armygreen}{rgb}{0.0, 0.26, 0.15}
+%\usepackage{hyperref}   % clickable hyperlinks in the pdf
+\hypersetup{colorlinks,
+linkcolor=darkblue,
+citecolor=darkred,
+urlcolor=cyan}  % switch to black for printing all text in black
+\usepackage{authblk}
+\usepackage{tabto}
+\usepackage{subfloat}
+\usepackage{verbatim} 
+\usepackage{color}   
+\usepackage{wrapfig}    % for Blair's appendix
+\usepackage{pdfpages} % to include multipage pdfs
+\usepackage{todonotes} % to highlight todos [disable] to get rid of the comments
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{tabulary}
+\usepackage[separate-uncertainty=true]{siunitx}
+
+%Ruslan's packages
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{enumitem}
+\newlist{RSenumerate}{enumerate}{1}
+\setlist[RSenumerate]{label=\textcolor{darkblue}{\textbf{RS \arabic*}}}
+
+
+%\usepackage{fancyhdr}
+% headers
+%\pagestyle{headings}
+%\usepackage[font={small,sf}, labelfont=bf]{caption} % make smaller and italic picture captions
+%\lhead{UCN}
+%\chead{\leftmark}
+%\rhead{CDR}
+
+\setcounter{tocdepth}{3}
+
+
+%the following setup to define subsubsubsections via the paragraph command
+\usepackage{titlesec}
+%\cftsetindents{section}{1em}{3em}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% change numbering to per section, not total
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+% define more characters where a url can be broken
+\def\UrlBreaks{\do\/\do-}
+
+% define commands to quote text later in the same document
+\newcommand\declquotedtext[2]{\expandafter\def\csname quotedtext@#1 \endcsname{#2}}
+\newcommand\defquotedtext[2]{\declquotedtext{#1}{#2}#2}
+\newcommand\usequotedtext[1]{\csname quotedtext@#1 \endcsname}
+%usage
+%  \defquotedtext{test}{This is a test text.}
+%  \declquotedtext{later}{And this is a text declared for later use.}
+%  \usequotedtext{test}
+
+% print line numbers in the margin
+%\usepackage[pagewise]{lineno}
+%\linenumbers
+
+
+\hoffset=-0.25in
+\voffset=0in
+\topmargin=-0.25in
+\topskip=0in
+\headheight=12pt
+\headsep=12pt
+\textwidth=7in
+\textheight=9.17in
+\footskip=30pt
+\oddsidemargin=0in
+\evensidemargin=0in
+
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+    \setlength{\belowcaptionskip}{-5pt}
+
+%guide coating section definitions
+\newcommand{\nf}{$^{58}$Ni }
+\newcommand{\cusixfive}{$^{65}$Cu }
+\newcommand{\fermipot}{Fermi Potential }
+\newcommand{\degree}{\ensuremath{^\circ} }
+
+%running fraction with slash - requires math mode.
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+%Jeffs sensors graphic command
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+
+
+\author[3,4]{S. Ahmed}
+\author[3,4]{T. Andalib}
+\author[3]{C.P.~Bidinosti}
+\author[4]{J.~Birchall}
+\author[3,4]{M.~Das}
+\author[5]{C.~Davis}
+\author[5]{E.~Cudmore}
+\author[2]{A.~Ezzat}
+\author[5]{B.~Franke}
+\author[4]{M.~Gericke}
+\author[3,4]{S.~Hansen-Romu}
+\author[6]{K.~Hatanaka}
+\author[3]{B.~Jamieson}
+\author[5]{K.~Katsika}
+\author[1]{S.~Kawasaki}
+\author[5,11]{T.~Kikawa}
+\author[10]{M.~Kitaguchi}
+\author[5,6]{A.~Konaka}
+\author[5]{F.~Kuchler}
+\author[7]{E. Korkmaz}
+\author[3,4]{M.~Lang} 
+\author[5]{L.~Lee}
+\author[5,3]{T.~Lindner}
+\author[1]{Y.~Makida}
+\author[4]{J.~Mammei}
+\author[3]{R. Mammei}
+\author[5]{C.~Marshall}
+\author[3]{J.W.~Martin}
+\author[5]{R. Matsumiya}
+\author[9]{K.~Mishima}
+\author[2]{T.~Momose}
+\author[5]{R.~Nagimov}
+\author[1]{T.~Okamura}
+\author[4]{S.~Page}
+\author[5,8]{R.~Picker}
+\author[6,5]{E.~Pierre}
+\author[5]{W.D.~Ramsay}
+\author[3,4]{L.~Rebenitsch}
+\author[5]{W.~Schreyer}
+\author[10]{H.~Shimizu}
+\author[8]{S.~Sidhu}
+\author[8]{J.~Sonier}
+\author[6]{I. Tanihata}
+\author[2,5]{S. Vanbergen}
+\author[4,5]{W.T.H.~van~Oers}
+\author[1]{Y.~Watanabe}
+
+
+%
+\affil[1]{KEK, Tsukuba, Ibaraki, Japan}
+\affil[2]{The University of British Columbia, Vancouver, BC, Canada}
+\affil[3]{The University of Winnipeg, Winnipeg, MB, Canada}
+\affil[4]{The University of Manitoba, Winnipeg, MB, Canada}
+\affil[5]{TRIUMF, Vancouver, BC, Canada}
+\affil[6]{RCNP Osaka University, Ibaraki, Osaka, Japan}
+\affil[7]{The University of Northern BC, Prince George, BC, Canada}
+\affil[8]{Simon Fraser University, Burnaby, BC, Canada}
+\affil[9]{KEK, Tokai, Japan}
+\affil[10]{Nagoya University, Nagoya, Japan}
+\affil[11]{Kyoto University, Kyoto, Japan}
+\makeatletter
+
+\begin{document}
+ 
+ \clearpage
+\section{Ambient Magnetic Control {\color{red}(TH)} {\color{darkgreen}(Rev:)}}
+\label{sec:AMC}
+\input{./sections/012AMC.tex}
+
+\end{document}
+

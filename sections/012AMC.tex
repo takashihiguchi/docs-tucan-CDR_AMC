@@ -1,0 +1,181 @@
+\textcolor{blue}{
+\textbf{Deliverables:}
+\begin{itemize}
+\item requirements $\xrightarrow{\rm status}$ draft
+\item concept design (if necessary baseline and backups) including 3D model
+\item main questions to answer in this subsection
+    \begin{itemize}
+    \item number of coils
+    \item coil size
+    \item power consumption
+    \item envelope for inductance
+    \item active component?
+    \item minimum number of magnetometers
+    \item achievable sampling frequency, ...
+    \end{itemize}
+\item calculations proving that the design concept fulfills the requirements 
+\item interface definitions (detailed)
+\item design and manufacturing plan
+\item schedule
+a\end{itemize}
+}
+\subsection*{Outline of the section}
+ \begin{enumerate}
+ \item 
+ \item few
+ 
+ \end{enumerate}
+ 
+\subsection{Overview and requirements}
+The nEDM spectrometer will be located in TRIUMF Meson Hall. The location of the experiment in the accelerator facility brings particular challenges in constructing a magnetic field environment required for the EDM measurement, such as a strong background magnetic field, and significant magnetic field variations.  The subsystem Ambient Magnetic Control (AMC) system is proposed to control the magnetic field exterior of MSR to enable the measurement under such a situation. It will consist of a set of magnetic field sensors and compensation coils mounted on the frames.  In this section, the requirements and the design concept of the subsystem are discussed. In section ****, status of recent characterization of the on-site magnetic field environment in the Meson Hall is reported.  
+%\begin{figure}[htb]
+%\centering
+%%trim={<left> <lower> <right> <upper>}
+%\includegraphics[width=0.99\textwidth, trim = {0cm 0cm 3cm 0cm},clip]{./graphics/AMC/figurename}
+%\caption{.}
+%\label{fig:SourceUCNhandlingcomponents}
+%\end{figure}
+%\begin{figure}[htb]
+%\centering
+%%trim={<left> <lower> <right> <upper>}
+%\includegraphics[width=0.8\textwidth, trim = {5cm 0cm 6cm 0cm},clip]{./graphics/UCNHandlingEDM}
+%\caption{}
+%\label{fig:AMC-}
+%\end{figure}
+
+
+ 
+\subsection{Purposes and requirements}
+In 2012, a measurement campaign was performed to characterize the magnetic field in the current TUCAN are in the Meson Hall \cite{Sarte}. It revealed a few challenging properties, which are 
+\begin{itemize}
+\item a strong static background field up to $\approx 350~\mu$T
+\item magnetic field variations up to an order of 10~$\mu$T.
+\end{itemize}
+Possible influence of these properties on the experiment and the requirements of  AMC on 
+\paragraph*{Requirement for static compensation }
+By FEA simulations on Opera-3D, it was found that under such s strong background field, the external layer of mu-metal of MSR would experience magnetic fields close to saturation of mu-metal [ref, MSR]. In order to avoid saturation of MSR and ensure its shielding performance,  AMC should compensate the background field 
+\paragraph*{Need of dynamic compensation }
+
+
+
+As will be reported in more detail in *****, the background magnetic field stability in the Meson Hall 
+
+
+
+Among them,  particularly challenging properties  of the magnetic field in the meson hall is the strong static background field as large as  $|B|\approx\,350\mu$T and magnetic field variations up to the  order of $10~\mu$T (see Section \ref{sec:AMC-variation} for the details).
+
+In view of the above environment,  the two main purposes of the AMC  are
+\begin{itemize}
+\item compensation of the static background field in order to prevent saturation of mu-metal layers of MSR
+\item dynamic compensation of magnetic field variations in the Meson Hall to achieve sufficient magnetic field stability fro the EDM measurment.
+\end{itemize}
+FEA simulations of the 
+
+    
+    The basic design of the system is to have adequate number of fluxgate magnetometers which measure the magnetic  field and its variations, with two kinds of coil systems; one for the  static compensation of a large field, and the other for the dynamic compensation. The static compensation syste m should provide large field comparable to the background field, while the dynamic compensation should have enough dynamic range up to $30\,\mu$T and should have a response time fast enough to follow typical field variations.
+    
+    More details of the design and the requirements have to be discussed based on properties of the magnetic field found by measurements. 
+
+\subsubsection{Design concept}
+
+\subsubsection{Requirements on static compensation}
+FEA simulations on Opera-3D shows that with a background field as large as  $350\mu$T
+
+
+%\begin{table}[tb]
+%\centering
+%\caption{Parameters characterizing the magnetic environment of the TUCAN apparatus in the TRIUMF Meson Hall, listed in comparison of those of PSI-nEDM experiment.  [Afash]
+%Magnetic field environment in TRIUMF Meson Hall in comparison to PSI-nEDM experiment. }\label{tab:MSR-comparison}
+%\vspace{1em}
+%\begin{tabular}{|l|c|c|}
+%\hline
+% & TUCAN  & PSI-nEDM \\ \hline \hline 
+%Static background field strength $ |B|$ & $\approx 350\,\mu$T  & $\approx 62\,\mu$T \\ \hline
+%Fluctuations (@100\,s averaging) & $ \lesssim 100$\,nT & $\sim100\,$nT  \\ \hline
+%Occasional variations & $ \lesssim 30\,\mu$T (crane) & $ \lesssim  30\,\mu$T     (SULTAN/EDIPO)    \\ \hline
+%MSR quasi-static shielding factor  &  $\sim 10^5$ & $\sim 10^4$ \\ \hline 
+%\end{tabular}
+%\end{table}
+
+
+
+
+\subsection{Plans and statuses}
+\subsubsection{Plans}
+\subsubsection{Characterization of typical magnetic field variations in the Meson Hall}\label{sec:AMC-variation}
+\subsubsection{Magnetic field mapping at a planned location of MSR}
+
+
+\subsection{DAQ/AMC Interface Requirements}
+
+Q1: Will your subsystem be providing a data stream (over some network connection) to the DAQ/controls?  Or will you be providing an analog signal(s) that you want digitized by some DAQ/controls module? 
+If you are providing only a data stream, then you can skip question 2.
+
+A1: The AMC will provide a data stream
+
+
+Q3: Does your subsystem require a digitizer that is referenced to a central atomic clock?
+
+A3: No. The subsystem acquires magnetic field data and makes response to it of necessary, but it is not required to synchronize this process to an external clock with extreme precision. The status of the system, such as recorded magnetic fields or currents set to coils will be recorded to MIDAS as for the other subsystems, but moderate precision of the absolute time is sufficient for this purpose, too.
+
+Q4: Does your subsystem have controls or gas handling like equipment?
+
+
+Q4.1 If yes does your equipment require PLC-type interlocks to ensure correct/reliable operation?  Ie is there equipment-protection, safety or operational reasons why controls needs to be done with a PLC-type system? Or is it sufficient to have a computer program doing the control?
+
+A4: The control of the subsystem can be decided later, but seems to be ideal to use EPICS/MIDAS as for the other parts of the experiment. No gas handling like equipment is planned to be included in this  subsystem.
+
+\begin{thebibliography}{9}
+\bibitem{Afach2015}
+Afach 2015
+
+\end{thebibliography}
+
+
+\begin{center}
+\textcolor{blue}{
+------------------------------[Old draft ]--------------------------------------------
+}
+\end{center}
+
+
+
+
+
+
+
+\paragraph*{RS 3.-34}	The AMC shall reduce the external magnetic field to a level comparable to Earth magnetic field, less than 50 muT 
+\newline Rationale: 	
+%The passive shielding of the MSR can only handle a field of a certain magnitude, so the external field must be compensated.
+We do not expect the outer layer of the MSR to saturate (refer to A Sher's calulations to be inserted into this document), however, the manufacturer of the MSR will not certify it's performance for any external field value larger than Earth field
+\newline Rationale: 	The 50 muT requirement is Earth’s field, but a smaller target field may be desirable
+\paragraph*{RS 3.-35}	The AMC shall be constructed in such a way that it does not prevent access to the MSR. A 'door' as well as a roof lid might be required in the AMC coil cage.
+\newline Rationale: 	It will certainly be necessary to enter the MSR throughout the experimental run, so the AMC cannot render this impossible.
+\paragraph*{RS 3.-36}	The ambient field of the experimental area shall be mapped and monitored to a precision acceptable to specify the construction of the AMC; 
+\newline Rationale: 	It is important to understand the ambient magnetic conditions due to other magnetic equipment prior to running the experiment. ie the maximum DC values and amplitude of AC changes need to be known such that the right power and bandwith/speed of power supplies as well as inductance of coils can be chosen/determined.
+\paragraph*{RS 3.-37}	The ambient magnetic field control system shall be developed such that its cost falls within the CFI budget allocation.
+\newline Rationale: 	 This is necessary for completion of the experiment.
+\paragraph*{RS 3.-38}	Development of the ambient magnetic field control systems shall be completed in the timeframe given by the Level 1 schedule shown in Document-154393. Critically this specifies installation of all hardware by 2021.
+\newline Rationale: 	This timeline is necessary to begin data taking in 2021 in order for the TUCAN EDM experiment to remain competitive.
+
+\paragraph*{Requirement:} buck the cyclotron field to a level that fulfills IMEDCO operations conditions
+for the MSR (below Earth field) and ensure the outermost layer will not saturate;
+\paragraph*{Requirement:}
+maybe stabilize the external field in subHz region if that can improve the MSR performance
+
+\subsubsection{Other stuff}
+
+\paragraph*{Open question:} Final conclusion of necessity of dynamic part depends on manufacturer specs, and might
+only be accessible once the MSR is installed at TRIUMF and tested
+
+\paragraph*{Baseline design:} A coil cage of three orthogonal ‘merrit coils’ should do the job, but it should be checked that
+sufficient orders of magnetic field can be covered by this kind and number of degrees of
+freedom
+\paragraph*{Design Status:} Simulation and design note needed, maybe tad bit more
+R\&D
+\paragraph*{Interfaces:} Relation to thermal enclosure, inside or outside? Does their mechanical structure interfere?
+
+
+
+
+
