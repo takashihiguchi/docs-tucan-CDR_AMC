@@ -21,8 +21,9 @@ a\end{itemize}
 }
 \subsection*{Outline of the section}
  \begin{enumerate}
+ \item Overview 
+ \item Requirements 
  \item 
- \item few
  
  \end{enumerate}
  
@@ -44,6 +45,24 @@ The nEDM spectrometer will be located in TRIUMF Meson Hall. The location of the 
 %\end{figure}
 
 
+\begin{table}[htb!]
+\centering 
+\begin{tabular}{|l||c|c|}
+\hline
+
+ & \multicolumn{1}{c|}{\cellcolor[HTML]{ECF4FF}\textbf{PSI}} & \multicolumn{1}{c|}{\cellcolor[HTML]{ECF4FF}\textbf{TRIUMF}} \\ \hline
+Static field $| \bm{B}|$ & $\approx62\,\mu$T     & $\approx 350\,\mu$T                       \\ \hline
+Fluctuations (@$100\,$s) & $\lesssim 100\,\mathrm{nT}$ & $\lesssim 100\,\mathrm{nT}$ \\ \hline
+Occasional variations    & $\lesssim,30\,\mu$T (SULTAN/EDIPO)        & $\lesssim 30\,\mu$T (crane)               \\ \hline
+ MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$   \\ \hline 
+
+\end{tabular}
+\caption{Nominal MSR geometry dimensions.}
+\label{tab:msr_geom}
+\end{table}
+
+
+
  
 \subsection{Purposes and requirements}
 In 2012, a measurement campaign was performed to characterize the magnetic field in the current TUCAN are in the Meson Hall \cite{Sarte}. It revealed a few challenging properties, which are 
@@ -55,7 +74,6 @@ Possible influence of these properties on the experiment and the requirements of
 \paragraph*{Requirement for static compensation }
 By FEA simulations on Opera-3D, it was found that under such s strong background field, the external layer of mu-metal of MSR would experience magnetic fields close to saturation of mu-metal [ref, MSR]. In order to avoid saturation of MSR and ensure its shielding performance,  AMC should compensate the background field 
 \paragraph*{Need of dynamic compensation }
-
 
 
 As will be reported in more detail in *****, the background magnetic field stability in the Meson Hall 
