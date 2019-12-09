@@ -1,38 +1,28 @@
-\textcolor{blue}{
-\textbf{Deliverables:}
-\begin{itemize}
-\item requirements $\xrightarrow{\rm status}$ draft
-\item concept design (if necessary baseline and backups) including 3D model
-\item main questions to answer in this subsection
-    \begin{itemize}
-    \item number of coils
-    \item coil size
-    \item power consumption
-    \item envelope for inductance
-    \item active component?
-    \item minimum number of magnetometers
-    \item achievable sampling frequency, ...
-    \end{itemize}
-\item calculations proving that the design concept fulfills the requirements 
-\item interface definitions (detailed)
-\item design and manufacturing plan
-\item schedule
-a\end{itemize}
-}
-\subsection*{Outline of the section}
- \begin{enumerate}
- \item Overview 
- \item Requirements 
- \item 
- 
- \end{enumerate}
- 
-\subsection{Overview and requirements}
+% \textcolor{blue}{
+% \textbf{Deliverables:}
+% \begin{itemize}
+% \item requirements $\xrightarrow{\rm status}$ draft
+% \item concept design (if necessary baseline and backups) including 3D model
+% \item main questions to answer in this subsection
+%     \begin{itemize}
+%     \item number of coils
+%     \item coil size
+%     \item power consumption
+%     \item envelope for inductance
+%     \item active component?
+%     \item minimum number of magnetometers
+%     \item achievable sampling frequency, ...
+%     \end{itemize}
+% \item calculations proving that the design concept fulfills the requirements 
+% \item interface definitions (detailed)
+% \item design and manufacturing plan
+% \item schedule
+% a\end{itemize}
+% }
+\subsection{Overview}
 The location of the nEDM spectrometer in an accelerator facility necessitates a system to reduce influences of environmental magnetic fields to the experiment. As mentioned in an earlier section [ref, MSR], there is a strong background field of $\approx 350\,\mu$T on the TUCAN area in the TRIUMF Meson Hall. The FEA simulations revealed that such a strong field could saturate the mu-metal layers of MSR, and worsen its shielding performance [ref, 9.4.1]. In addition, there are also occasional field perturbations on the order of $\sim 10\,\mu$T, which may require demagnetization procedures of MSR. 
 
-The Ambient Magnetic-field Compensation subsystem will provide static and dynamic magnetic field compensation in the exterior of MSR to ensure the shielding performance of MSR and increase possible  up time of the EDM measurements.
-
-This section specifies the key requirements of this subsystem and some development works performed in this context.  
+The Ambient Magnetic-field Compensation (AMC) subsystem will provide static and dynamic magnetic field compensation in the exterior of MSR to ensure the shielding performance of MSR and increase possible  up time of the EDM measurements. This section specifies the key requirements of this subsystem and some developmental works performed in this context.  
 
 %\begin{figure}[htb]
 %\centering
@@ -50,21 +40,25 @@ This section specifies the key requirements of this subsystem and some developme
 %\end{figure}
 
 
-\begin{table}[htb!]
+\begin{table}[htb]
 \centering 
 \begin{tabular}{|l||c|c|}
 \hline
 
- & \multicolumn{1}{c|}{\cellcolor[HTML]{ECF4FF}\textbf{PSI}} & \multicolumn{1}{c|}{\cellcolor[HTML]{ECF4FF}\textbf{TRIUMF}} \\ \hline
+ & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline
 Static field $| \bm{B}|$ & $\approx62\,\mu$T     & $\approx 350\,\mu$T                       \\ \hline
 Fluctuations (@$100\,$s) & $\lesssim 100\,\mathrm{nT}$ & $\lesssim 100\,\mathrm{nT}$ \\ \hline
-Occasional variations    & $\lesssim,30\,\mu$T (SULTAN/EDIPO)        & $\lesssim 30\,\mu$T (crane)               \\ \hline
- MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$   \\ \hline 
+Occasional variations    & $\lesssim,30\,\mu$T         & $\lesssim 30\,\mu$T            \\ \hline
+ MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$ (planned)  \\ \hline 
 
 \end{tabular}
-\caption{Nominal MSR geometry dimensions.}
-\label{tab:msr_geom}
+\caption{List of typical numbers characterizing the magnetic field environment in the PSI nEDM experiment and TUCAN experiment in TRIUMF Meson Hall. Typical values of the magnetic of the static background field, the magnetic field fluctuations evaluated by the Allan deviation with the averaging time of 100\,s, Typical amplitudes of occasional magnetic field variations, the quasi-static shielding factor of MSR. The numbers for the PSI experiment are based on [Afach2014, Franke2013]. Those of TUCAN are based on [Sarte2013] and recent measurements discussed in [ref]. 
+}
+\label{tab:amc_comparaion}
 \end{table}
+
+In Table \ref{tab:amc_comparaion}, typical numbers which characterize magnetic field environment of the experiments are listed for the PSI nEDM experiment and the TUCAN experimental area in TRIUMF Meson Hall. 
+One significant difference between the two is the order-of-magnitude stronger static background field in case of TUCAN.    
 
 
 
