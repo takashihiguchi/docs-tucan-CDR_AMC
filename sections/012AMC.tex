@@ -43,19 +43,22 @@ The Ambient Magnetic-field Compensation (AMC) subsystem will provide static and 
 
 \subsection{Purposes and requirements}
 
+\paragraph*{Purposes}
 
 The PSI nEDM experiment also employed a system of surrounding field compensation [Afach2014]. To compare the situations of the PSI nEDM and the TUCAN area in the TRIUMF Meson Hall, and to clarify the requirements in our case, typical numbers to characterize the magnetic environments are listed  in Table \ref{tab:amc_comparaion}. 
 
 One significant difference between the two is the order-of-magnitude stronger static background field in the TUCAN area which is due to the stray field of the TRIUMF cyclotron. As long as this issue is well treated and the function of MSR secured, TUCAN MSR is expected to provide sufficient suppression of the background fluctuations to the order of $\sim10\,$pT in the averaging time of $\sim 100\,$s. 
 Therefore, unlike the case of the PSI experiment where the active magnetic field compensation was used during the EDM measurement sequence to achieve required magnetic field stability, the active control field is not necessary during the EDM measurement sequence. 
 
-In both cases, occasional strong magnetic field variations exist. In case of the PSI experiment, neighboring superconducting magnet test facilities were operated in daily bases,  producing magnetic field variations up to $30\,\mu$T. According to [Afach2014],  field variations of this order required an idealization procedure of the passive shielding. The needs of this procedure, which typically took about 30\,min to an hour, were reduced by the active compensation suppressing them by a factor of $\sim10 $[Afach2014]. In case of TUCAN, the overhead bridge crane was found to produce magnetic field variations on a comparable order. 
+In both cases, occasional strong magnetic field variations exist. In case of the PSI experiment, neighboring superconducting magnet test facilities were operated in daily bases,  producing magnetic field variations up to $30\,\mu$T. According to [Afach2014],  field variations of this order required a degaussing (or idealization) procedure of the passive shielding. The needs of this procedure, which typically took about 30\,min to an hour, were reduced by the active compensation suppressing them by a factor of $\sim10 $[Afach2014]. In case of TUCAN, the overhead bridge crane was found to produce magnetic field variations on a comparable order. Therefore we should anticipate that such field variations will make degaussing procedures required. Active magnetic field compensation can possibly reduce the needs of degaussing procedures, if it can suppress some of the field variations to the order of $1\,\mu$T or below, it can even make the EDM measurement possible under such field variations.
 
-Therefore active  magnetic field compensation may be beneficial for the experiment as it may 
+ Regarding the above discussions, the purposes of the AMC are 
+\begin{itemize}
+    \item to provide static magnetic field compensation in order to prevent the background field of $\approx 350\,\mu$T from saturating MSR 
+    \item to provide compensation of dynamic magnetic field. Its main target is the strong field variations on the order of $\sim 10\,\mu$T. This will increase potential up time of the EDM measurements. 
+\end{itemize}
 
-
-
-\begin{table}[ht]
+\begin{table}[hbt]
 \centering 
 \begin{tabular}{|l||c|c|}
 \hline
@@ -71,20 +74,10 @@ Occasional variations    & $\lesssim30\,\mu$T         & $\lesssim 30\,\mu$T     
 \label{tab:amc_comparaion}
 \end{table}
 
+\paragraph*{Requirements}
+The key requirement specifications on the performance of AMC are stated below. 
 
 
- 
-
-
-In 2012, a measurement campaign was performed to characterize the magnetic field in the current TUCAN are in the Meson Hall \cite{Sarte}. It revealed a few challenging properties, which are 
-\begin{itemize}
-\item a strong static background field up to $\approx 350~\mu$T
-\item magnetic field variations up to an order of 10~$\mu$T.
-\end{itemize}
-Possible influence of these properties on the experiment and the requirements of  AMC on 
-\paragraph*{Requirement for static compensation }
-By FEA simulations on Opera-3D, it was found that under such s strong background field, the external layer of mu-metal of MSR would experience magnetic fields close to saturation of mu-metal [ref, MSR]. In order to avoid saturation of MSR and ensure its shielding performance,  AMC should compensate the background field 
-\paragraph*{Need of dynamic compensation }
 
 
 As will be reported in more detail in *****, the background magnetic field stability in the Meson Hall 
@@ -93,15 +86,9 @@ As will be reported in more detail in *****, the background magnetic field stabi
 
 Among them,  particularly challenging properties  of the magnetic field in the meson hall is the strong static background field as large as  $|B|\approx\,350\mu$T and magnetic field variations up to the  order of $10~\mu$T (see Section \ref{sec:AMC-variation} for the details).
 
-In view of the above environment,  the two main purposes of the AMC  are
-\begin{itemize}
-\item compensation of the static background field in order to prevent saturation of mu-metal layers of MSR
-\item dynamic compensation of magnetic field variations in the Meson Hall to achieve sufficient magnetic field stability fro the EDM measurment.
-\end{itemize}
-FEA simulations of the 
 
     
-    The basic design of the system is to have adequate number of fluxgate magnetometers which measure the magnetic  field and its variations, with two kinds of coil systems; one for the  static compensation of a large field, and the other for the dynamic compensation. The static compensation syste m should provide large field comparable to the background field, while the dynamic compensation should have enough dynamic range up to $30\,\mu$T and should have a response time fast enough to follow typical field variations.
+    The basic design of the system is to have adequate number of fluxgate magnetometers which measure the magnetic  field and its variations, with two kinds of coil systems; one for the  static compensation of a large field, and the other for the dynamic compensation. The static compensation system should provide large field comparable to the background field, while the dynamic compensation should have enough dynamic range up to $30\,\mu$T and should have a response time fast enough to follow typical field variations.
     
     More details of the design and the requirements have to be discussed based on properties of the magnetic field found by measurements. 
 
