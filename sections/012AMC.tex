@@ -41,9 +41,8 @@ The Ambient Magnetic-field Compensation (AMC) subsystem will provide static and 
 
 
 
-\subsection{Purposes and requirements}
 
-\paragraph*{Purposes}
+\subsection{Purposes}
 
 The PSI nEDM experiment also employed a system of surrounding field compensation [Afach2014]. To compare the situations of the PSI nEDM and the TUCAN area in the TRIUMF Meson Hall, and to clarify the requirements in our case, typical numbers to characterize the magnetic environments are listed  in Table \ref{tab:amc_comparaion}. 
 
@@ -52,7 +51,7 @@ Therefore, unlike the case of the PSI experiment where the active magnetic field
 
 In both cases, occasional strong magnetic field variations exist. In case of the PSI experiment, neighboring superconducting magnet test facilities were operated in daily bases,  producing magnetic field variations up to $30\,\mu$T. According to [Afach2014],  field variations of this order required a degaussing (or idealization) procedure of the passive shielding. The needs of this procedure, which typically took about 30\,min to an hour, were reduced by the active compensation suppressing them by a factor of $\sim10 $[Afach2014]. In case of TUCAN, the overhead bridge crane was found to produce magnetic field variations on a comparable order. Therefore we should anticipate that such field variations will make degaussing procedures required. Active magnetic field compensation can possibly reduce the needs of degaussing procedures, if it can suppress some of the field variations to the order of $1\,\mu$T or below, it can even make the EDM measurement possible under such field variations.
 
- Regarding the above discussions, the purposes of the AMC are 
+Based on the above discussions, the purposes of the AMC are 
 \begin{itemize}
     \item to provide static magnetic field compensation in order to prevent the background field of $\approx 350\,\mu$T from saturating MSR 
     \item to provide compensation of dynamic magnetic field. Its main target is the strong field variations on the order of $\sim 10\,\mu$T. This will increase potential up time of the EDM measurements. 
@@ -64,7 +63,7 @@ In both cases, occasional strong magnetic field variations exist. In case of the
 \hline
 
  & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline\hline 
-Static background field $| \bm{B}|$ & $\approx62\,\mu$T     & $\approx 350\,\mu$T                       \\ \hline
+Static background field $| \bm{B}|$ & $\approx62\,\mu$T & $\approx 350\,\mu$T                       \\ \hline
 Background field fluctuations  $\sigma_{|\mathbf{B}|}(100\,\mathrm{s})$ & $\approx 1\,\mathrm{nT}$ (night), $\approx 80\,\mathrm{nT}$ (day) & $\lesssim 80\,\mathrm{nT}$ \\ \hline
 Occasional variations    & $\lesssim30\,\mu$T         & $\lesssim 30\,\mu$T            \\ \hline
  MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$ (planned)  \\ \hline 
@@ -74,12 +73,31 @@ Occasional variations    & $\lesssim30\,\mu$T         & $\lesssim 30\,\mu$T     
 \label{tab:amc_comparaion}
 \end{table}
 
-\paragraph*{Requirements}
+
+\subsection{Requirements}
 The key requirement specifications on the performance of AMC are stated below. 
 
+\begin{RSenumerate}[resume]
+\item    The AMC static magnetic field compensation should reduec the field surrounding MSR such that $|\mathf{B}|<0.1\,$T in the outermost layer of MSR
+\label{RS:amc_static}
+\begin{itemize}
+    \item[\textbf{Rationale:}]  with a safety margin etc.
+    \item[\textbf{Test:}] test
+\end{itemize}
+\item the target area of the static compensation 
 
 
 
+\end{RSenumerate}
+
+We are still on the way of the concept design, the hardware requirements are not clarified  on this stage. To list some which are known at this point: 
+
+\begin{RSenumerate}[resume]
+\item The frame which accommodates the AMC coil system should fit in the 
+The maximum it can expand is the volume of 
+\item 
+
+\end{RSenumerate}
 As will be reported in more detail in *****, the background magnetic field stability in the Meson Hall 
 
 
@@ -92,10 +110,10 @@ Among them,  particularly challenging properties  of the magnetic field in the m
     
     More details of the design and the requirements have to be discussed based on properties of the magnetic field found by measurements. 
 
-\subsubsection{Design concept}
-
-\subsubsection{Requirements on static compensation}
-FEA simulations on Opera-3D shows that with a background field as large as  $350\mu$T
+\subsubsection{Status of the concept design}
+\subsubsection*{Feasibility of the static compensation}
+\subsubsection*{Characterization of the static background field}
+\subsubsection*{Characterization of the field variations caused by the overhead crane}
 
 
 %\begin{table}[tb]
