@@ -20,7 +20,7 @@
 % a\end{itemize}
 % }
 \subsection{Overview}
-The location of the nEDM spectrometer in an accelerator facility necessitates a system to reduce influences of environmental magnetic fields to the experiment. As mentioned in an earlier section [ref, MSR], there is a strong background field of $\approx 350\,\mu$T on the TUCAN area in the TRIUMF Meson Hall. The FEA simulations revealed that such a strong field could saturate the mu-metal layers of MSR, and worsen its shielding performance [ref, 9.4.1]. In addition, there are also occasional field perturbations on the order of $\sim 10\,\mu$T, which may require demagnetization procedures of MSR. 
+The location of the nEDM spectrometer in an accelerator facility necessitates a system to reduce influences of environmental magnetic fields to the experiment. As mentioned in an earlier section [ref, MSR], there is a strong background field of $\approx 350\,\mu$T in the TUCAN area in the TRIUMF Meson Hall. The FEA simulations revealed that such a strong field could saturate the mu-metal layers of MSR, and worsen its shielding performance [ref, 9.4.1]. In addition, there are also occasional field perturbations on the order of $\sim 10\,\mu$T, which may require demagnetization procedures of MSR. 
 
 The Ambient Magnetic-field Compensation (AMC) subsystem will provide static and dynamic magnetic field compensation in the exterior of MSR to ensure the shielding performance of MSR and increase possible  up time of the EDM measurements. This section specifies the key requirements of this subsystem and some developmental works performed in this context.  
 
@@ -40,30 +40,42 @@ The Ambient Magnetic-field Compensation (AMC) subsystem will provide static and 
 %\end{figure}
 
 
-\begin{table}[htb]
+
+\subsection{Purposes and requirements}
+
+
+The PSI nEDM experiment also employed a system of surrounding field compensation [Afach2014]. To compare the situations of the PSI nEDM and the TUCAN area in the TRIUMF Meson Hall, and to clarify the requirements in our case, typical numbers to characterize the magnetic environments are listed  in Table \ref{tab:amc_comparaion}. 
+
+One significant difference between the two is the order-of-magnitude stronger static background field in the TUCAN area which is due to the stray field of the TRIUMF cyclotron. As long as this issue is well treated and the function of MSR secured, TUCAN MSR is expected to provide sufficient suppression of the background fluctuations to the order of $\sim10\,$pT in the averaging time of $\sim 100\,$s. 
+Therefore, unlike the case of the PSI experiment where the active magnetic field compensation was used during the EDM measurement sequence to achieve required magnetic field stability, the active control field is not necessary during the EDM measurement sequence. 
+
+In both cases, occasional strong magnetic field variations exist. In case of the PSI experiment, neighboring superconducting magnet test facilities were operated in daily bases,  producing magnetic field variations up to $30\,\mu$T. According to [Afach2014],  field variations of this order required an idealization procedure of the passive shielding. The needs of this procedure, which typically took about 30\,min to an hour, were reduced by the active compensation suppressing them by a factor of $\sim10 $[Afach2014]. In case of TUCAN, the overhead bridge crane was found to produce magnetic field variations on a comparable order. 
+
+Therefore active  magnetic field compensation may be beneficial for the experiment as it may 
+
+
+
+\begin{table}[ht]
 \centering 
 \begin{tabular}{|l||c|c|}
 \hline
 
- & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline
-Static field $| \bm{B}|$ & $\approx62\,\mu$T     & $\approx 350\,\mu$T                       \\ \hline
-Fluctuations (@$100\,$s) & $\lesssim 100\,\mathrm{nT}$ & $\lesssim 100\,\mathrm{nT}$ \\ \hline
-Occasional variations    & $\lesssim,30\,\mu$T         & $\lesssim 30\,\mu$T            \\ \hline
+ & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline\hline 
+Static background field $| \bm{B}|$ & $\approx62\,\mu$T     & $\approx 350\,\mu$T                       \\ \hline
+Background field fluctuations  $\sigma_{|\mathbf{B}|}(100\,\mathrm{s})$ & $\approx 1\,\mathrm{nT}$ (night), $\approx 80\,\mathrm{nT}$ (day) & $\lesssim 80\,\mathrm{nT}$ \\ \hline
+Occasional variations    & $\lesssim30\,\mu$T         & $\lesssim 30\,\mu$T            \\ \hline
  MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$ (planned)  \\ \hline 
-
 \end{tabular}
-\caption{List of typical numbers characterizing the magnetic field environment in the PSI nEDM experiment and TUCAN experiment in TRIUMF Meson Hall. Typical values of the magnetic of the static background field, the magnetic field fluctuations evaluated by the Allan deviation with the averaging time of 100\,s, Typical amplitudes of occasional magnetic field variations, the quasi-static shielding factor of MSR. The numbers for the PSI experiment are based on [Afach2014, Franke2013]. Those of TUCAN are based on [Sarte2013] and recent measurements discussed in [ref]. 
+\caption{List of typical numbers characterizing the magnetic field environment of the PSI nEDM experiment and the TUCAN are in TRIUMF Meson Hall. Typical values of the magnetic of the static background field, the magnetic field fluctuations evaluated by the Allan deviation with the averaging time of 100\,s, Typical amplitudes of occasional magnetic field variations, the quasi-static shielding factor of MSR. The numbers for the PSI experiment are based on [Afach2014, Franke2013]. Those of TUCAN are based on [Sarte2013] and recent measurements discussed in [ref]. 
 }
 \label{tab:amc_comparaion}
 \end{table}
 
-In Table \ref{tab:amc_comparaion}, typical numbers which characterize magnetic field environment of the experiments are listed for the PSI nEDM experiment and the TUCAN experimental area in TRIUMF Meson Hall. 
-One significant difference between the two is the order-of-magnitude stronger static background field in case of TUCAN.    
-
 
 
  
-\subsection{Purposes and requirements}
+
+
 In 2012, a measurement campaign was performed to characterize the magnetic field in the current TUCAN are in the Meson Hall \cite{Sarte}. It revealed a few challenging properties, which are 
 \begin{itemize}
 \item a strong static background field up to $\approx 350~\mu$T
