@@ -82,12 +82,16 @@ The key requirement specifications on the performance of AMC are stated below:
 \label{RS:amc_static}
 
 \begin{itemize}
-    \item[\textbf{Rationale:}]  The saturation magnetic induction of mu-metal is about $ 0.7\,$T. We require $|\mathbf{B}|<0.1\,$T  in order to have a large enough safety margin
+    \item[\textbf{Rationale:}]  The saturation magnetic induction of mu-metal is about $ 0.7\,$T. We require $|\mathbf{B}|<0.1\,$T  in order to have a large enough safety margin.
     \item[\textbf{Test:}] In defining the geometries of the coils, FEA simulations are essential which include a realistic background field, MSR, and the compensation coils to confirm that the requirement is satisfied. 
     
 \end{itemize}
-  \item The target of the static and dynamic compensation should be a 
- volume which contains the parts moved by opening or closing of the door of MSR [ref, figure in MSR section] \label{RS:amc_volume}
+ \item The aimed compensation of the dynamic compensation is a factor of 10 for field variations on the order of $\sim 10\,\mu$T.
+ \begin{itemize}
+    \item[\textbf{Rationale:}]  (The threshold of where we need degaussing is not well known, but a factor significant reduction will help, this is also a realistic number)
+\end{itemize}
+
+  \item The target of the static and dynamic compensation should be a  volume which contains the parts moved by opening or closing of the door of MSR [ref, figure in MSR section] \label{RS:amc_volume}
  \begin{itemize}
     \item[\textbf{Rationale:}] So that the parts of MSR moved by opening/closing do not become saturated. This will be necessary for operation as well as construction of MSR. 
     
@@ -99,29 +103,32 @@ The key requirement specifications on the performance of AMC are stated below:
 We are still on the way of the concept design, the hardware requirements are not clarified  on this stage. To list some which are known at this point: 
 
 \begin{RSenumerate}[resume]
-\item The frame which accommodates the AMC coil system should fit in the 
-The maximum it can expand is the volume of 
+\item The structure of AMC should not interfere with other apparatus in the area, according  to the latest layout of the assembly of the EDM apparatusv (December 2019), this volume would be **m x **m x**m 
 \item 
 
 \end{RSenumerate}
-As will be reported in more detail in *****, the background magnetic field stability in the Meson Hall 
+
+Some other hardware requirements should include, response time of the system which would constrain the inductance of the coils and switching time of the power supplies, an adequate rate and accuracy for the readout of the magnetometers, etc.. They will be clarified as the concept design proceeds. 
 
 
 
-Among them,  particularly challenging properties  of the magnetic field in the meson hall is the strong static background field as large as  $|B|\approx\,350\mu$T and magnetic field variations up to the  order of $10~\mu$T (see Section \ref{sec:AMC-variation} for the details).
 
-
-    
-    The basic design of the system is to have adequate number of fluxgate magnetometers which measure the magnetic  field and its variations, with two kinds of coil systems; one for the  static compensation of a large field, and the other for the dynamic compensation. The static compensation system should provide large field comparable to the background field, while the dynamic compensation should have enough dynamic range up to $30\,\mu$T and should have a response time fast enough to follow typical field variations.
-    
-    More details of the design and the requirements have to be discussed based on properties of the magnetic field found by measurements. 
 
 \subsubsection{Status of the concept design}
 \subsubsection*{Feasibility of the static compensation}
+(FEA simulation of a simple homogeneous background and Helmholtz coil pair compensating it, say that the realistic field map is required for design of the actual system)
+
+\subsubsection*{Recent magnetic field measurements in Meson Hall}
+(explain the motivations, show the map and coordinate definition)
 \subsubsection*{Characterization of the static background field}
+(show the plots, above $\sim$1 m from the floor, the z component is almost constant)
 \subsubsection*{Characterization of the field variations caused by the overhead crane}
-
-
+(Crane variations characterized by sensors fixed at multiple locations
+\begin{itemize}
+    \item Field variations created by bridge is homogeneous (<1muT/m) and not so large < 10muT
+    \item Field near the hook even goes up to 100 $\mu$T for the nearest sensor (**m?)
+\end{itemize}
+As the variations of the crane is one of the main target of the dynamic compensation, these characterizations will be considered in designing the coils for dynamic compensation.)
 %\begin{table}[tb]
 %\centering
 %\caption{Parameters characterizing the magnetic environment of the TUCAN apparatus in the TRIUMF Meson Hall, listed in comparison of those of PSI-nEDM experiment.  [Afash]
@@ -140,36 +147,35 @@ Among them,  particularly challenging properties  of the magnetic field in the m
 
 
 
-\subsection{Plans and statuses}
-\subsubsection{Plans}
-\subsubsection{Characterization of typical magnetic field variations in the Meson Hall}\label{sec:AMC-variation}
-\subsubsection{Magnetic field mapping at a planned location of MSR}
+\subsection{Timeline}
+(aiming to complete concept design by March 2020)
 
 
-\subsection{DAQ/AMC Interface Requirements}
 
-Q1: Will your subsystem be providing a data stream (over some network connection) to the DAQ/controls?  Or will you be providing an analog signal(s) that you want digitized by some DAQ/controls module? 
-If you are providing only a data stream, then you can skip question 2.
+% \subsection{DAQ/AMC Interface Requirements}
 
-A1: The AMC will provide a data stream
+% Q1: Will your subsystem be providing a data stream (over some network connection) to the DAQ/controls?  Or will you be providing an analog signal(s) that you want digitized by some DAQ/controls module? 
+% If you are providing only a data stream, then you can skip question 2.
 
-
-Q3: Does your subsystem require a digitizer that is referenced to a central atomic clock?
-
-A3: No. The subsystem acquires magnetic field data and makes response to it of necessary, but it is not required to synchronize this process to an external clock with extreme precision. The status of the system, such as recorded magnetic fields or currents set to coils will be recorded to MIDAS as for the other subsystems, but moderate precision of the absolute time is sufficient for this purpose, too.
-
-Q4: Does your subsystem have controls or gas handling like equipment?
+% A1: The AMC will provide a data stream
 
 
-Q4.1 If yes does your equipment require PLC-type interlocks to ensure correct/reliable operation?  Ie is there equipment-protection, safety or operational reasons why controls needs to be done with a PLC-type system? Or is it sufficient to have a computer program doing the control?
+% Q3: Does your subsystem require a digitizer that is referenced to a central atomic clock?
 
-A4: The control of the subsystem can be decided later, but seems to be ideal to use EPICS/MIDAS as for the other parts of the experiment. No gas handling like equipment is planned to be included in this  subsystem.
+% A3: No. The subsystem acquires magnetic field data and makes response to it of necessary, but it is not required to synchronize this process to an external clock with extreme precision. The status of the system, such as recorded magnetic fields or currents set to coils will be recorded to MIDAS as for the other subsystems, but moderate precision of the absolute time is sufficient for this purpose, too.
 
-\begin{thebibliography}{9}
-\bibitem{Afach2015}
-Afach 2015
+% Q4: Does your subsystem have controls or gas handling like equipment?
 
-\end{thebibliography}
+
+% Q4.1 If yes does your equipment require PLC-type interlocks to ensure correct/reliable operation?  Ie is there equipment-protection, safety or operational reasons why controls needs to be done with a PLC-type system? Or is it sufficient to have a computer program doing the control?
+
+% A4: The control of the subsystem can be decided later, but seems to be ideal to use EPICS/MIDAS as for the other parts of the experiment. No gas handling like equipment is planned to be included in this  subsystem.
+
+% \begin{thebibliography}{9}
+% \bibitem{Afach2015}
+% Afach 2015
+
+% \end{thebibliography}
 
 
 \begin{center}
