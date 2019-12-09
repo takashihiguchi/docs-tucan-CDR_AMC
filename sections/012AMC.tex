@@ -22,7 +22,7 @@
 \subsection{Overview}
 The location of the nEDM spectrometer in an accelerator facility necessitates a system to reduce influences of environmental magnetic fields to the experiment. As mentioned in an earlier section [ref, MSR], there is a strong background field of $\approx 350\,\mu$T in the TUCAN area in the TRIUMF Meson Hall. The FEA simulations revealed that such a strong field could saturate the mu-metal layers of MSR, and worsen its shielding performance [ref, 9.4.1]. In addition, there are also occasional field perturbations on the order of $\sim 10\,\mu$T, which may require demagnetization procedures of MSR. 
 
-The Ambient Magnetic-field Compensation (AMC) subsystem will provide static and dynamic magnetic field compensation in the exterior of MSR to ensure the shielding performance of MSR and increase possible  up time of the EDM measurements. This section specifies the key requirements of this subsystem and some developmental works performed in this context.  
+The Ambient Magnetic-field Compensation (AMC) subsystem will consist of a set of coils and magnetometers to provide static and dynamic magnetic field compensation in the exterior of MSR to ensure the shielding performance of MSR and increase possible  up time of the EDM measurements. This section specifies the key requirements of this subsystem and some developmental works performed in this context.  
 
 %\begin{figure}[htb]
 %\centering
@@ -63,9 +63,9 @@ Based on the above discussions, the purposes of the AMC are
 \hline
 
  & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline\hline 
-Static background field $| \bm{B}|$ & $\approx62\,\mu$T & $\approx 350\,\mu$T                       \\ \hline
+Static background field  & $\approx62\,\mu$T & $\approx 350\,\mu$T                       \\ \hline
 Background field fluctuations  $\sigma_{|\mathbf{B}|}(100\,\mathrm{s})$ & $\approx 1\,\mathrm{nT}$ (night), $\approx 80\,\mathrm{nT}$ (day) & $\lesssim 80\,\mathrm{nT}$ \\ \hline
-Occasional variations    & $\lesssim30\,\mu$T         & $\lesssim 30\,\mu$T            \\ \hline
+Occasional variations    & $\lesssim30\,\mu$T   & $\lesssim 100\,\mu$T            \\ \hline
  MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$ (planned)  \\ \hline 
 \end{tabular}
 \caption{List of typical numbers characterizing the magnetic field environment of the PSI nEDM experiment and the TUCAN are in TRIUMF Meson Hall. Typical values of the magnetic of the static background field, the magnetic field fluctuations evaluated by the Allan deviation with the averaging time of 100\,s, Typical amplitudes of occasional magnetic field variations, the quasi-static shielding factor of MSR. The numbers for the PSI experiment are based on [Afach2014, Franke2013]. Those of TUCAN are based on [Sarte2013] and recent measurements discussed in [ref]. 
@@ -75,18 +75,24 @@ Occasional variations    & $\lesssim30\,\mu$T         & $\lesssim 30\,\mu$T     
 
 
 \subsection{Requirements}
-The key requirement specifications on the performance of AMC are stated below. 
+The key requirement specifications on the performance of AMC are stated below:
 
 \begin{RSenumerate}[resume]
-\item    The AMC static magnetic field compensation should reduec the field surrounding MSR such that $|\mathf{B}|<0.1\,$T in the outermost layer of MSR
+\item    The AMC static magnetic field compensation should reduce the field surrounding MSR such that $|\mathbf{B}|<0.1\,$T in the outermost layer of MSR.
 \label{RS:amc_static}
+
 \begin{itemize}
-    \item[\textbf{Rationale:}]  with a safety margin etc.
-    \item[\textbf{Test:}] test
+    \item[\textbf{Rationale:}]  The saturation magnetic induction of mu-metal is about $ 0.7\,$T. We require $|\mathbf{B}|<0.1\,$T  in order to have a large enough safety margin
+    \item[\textbf{Test:}] In defining the geometries of the coils, FEA simulations are essential which include a realistic background field, MSR, and the compensation coils to confirm that the requirement is satisfied. 
+    
 \end{itemize}
-\item the target area of the static compensation 
-
-
+  \item The target of the static and dynamic compensation should be a 
+ volume which contains the parts moved by opening or closing of the door of MSR [ref, figure in MSR section] \label{RS:amc_volume}
+ \begin{itemize}
+    \item[\textbf{Rationale:}] So that the parts of MSR moved by opening/closing do not become saturated. This will be necessary for operation as well as construction of MSR. 
+    
+\end{itemize}
+ 
 
 \end{RSenumerate}
 
