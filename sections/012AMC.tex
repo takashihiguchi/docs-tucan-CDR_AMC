@@ -44,17 +44,17 @@ The Ambient Magnetic-field Compensation (AMC) subsystem will consist of a set of
 
 \subsection{Purposes}
 
-The PSI nEDM experiment also employed a system of surrounding field compensation [Afach2014]. To compare the situations of the PSI nEDM and the TUCAN area in the TRIUMF Meson Hall, and to clarify the requirements in our case, typical numbers to characterize the magnetic environments are listed  in Table \ref{tab:amc_comparaion}. 
+The PSI nEDM experiment also employed a system of surrounding field compensation [Afach2014]. To compare the situations of the PSI nEDM and the TUCAN area in  TRIUMF Meson Hall, and to clarify the requirements in our case, typical numbers to characterize the magnetic environments are listed  in Table \ref{tab:amc_comparaion}. 
 
 One significant difference between the two is the order-of-magnitude stronger static background field in the TUCAN area which is due to the stray field of the TRIUMF cyclotron. As long as this issue is well treated and the function of MSR secured, TUCAN MSR is expected to provide sufficient suppression of the background fluctuations to the order of $\sim10\,$pT in the averaging time of $\sim 100\,$s. 
-Therefore, unlike the case of the PSI experiment where the active magnetic field compensation was used during the EDM measurement sequence to achieve required magnetic field stability, the active control field is not necessary during the EDM measurement sequence. 
+Therefore, unlike the case of the PSI experiment where the active magnetic field compensation was used during the EDM measurement sequence to maintain required magnetic field stability, the active field control is not necessaryfor TUCAN during the EDM measurement sequence, except occasions when the field varies in steps on the order of $\sim 10\,\mu$T (see below).
 
-In both cases, occasional strong magnetic field variations exist. In case of the PSI experiment, neighboring superconducting magnet test facilities were operated in daily bases,  producing magnetic field variations up to $30\,\mu$T. According to [Afach2014],  field variations of this order required a degaussing (or idealization) procedure of the passive shielding. The needs of this procedure, which typically took about 30\,min to an hour, were reduced by the active compensation suppressing them by a factor of $\sim10 $[Afach2014]. In case of TUCAN, the overhead bridge crane was found to produce magnetic field variations on a comparable order. Therefore we should anticipate that such field variations will make degaussing procedures required. Active magnetic field compensation can possibly reduce the needs of degaussing procedures, if it can suppress some of the field variations to the order of $1\,\mu$T or below, it can even make the EDM measurement possible under such field variations.
+In both cases, occasional strong magnetic field variations exist. In case of the PSI experiment, neighboring superconducting magnet test facilities were operated in daily bases,  producing magnetic field variations up to $30\,\mu$T. According to [Afach2014],  field variations of this order required a degaussing (or idealization) procedure of the passive shielding. The needs of this procedure, which typically took about 30\,min to an hour, were reduced by the active compensation suppressing them by a factor of $\approx10$ [Afach2014]. In case of TUCAN, an overhead bridge crane in the hall, which is operated typically once in a few days, is found to produce magnetic field variations on a comparable order. Therefore we should anticipate that such field variations will make degaussing procedures required. Active magnetic field compensation can possibly reduce the needs of degaussing procedures, if it can suppress some of the field variations to the order of $1\,\mu$T or below, it can even make the EDM measurement possible under such field variations.
 
 Based on the above discussions, the purposes of the AMC are 
 \begin{itemize}
     \item to provide static magnetic field compensation in order to prevent the background field of $\approx 350\,\mu$T from saturating MSR 
-    \item to provide compensation of dynamic magnetic field. Its main target is the strong field variations on the order of $\sim 10\,\mu$T. This will increase potential up time of the EDM measurements. 
+    \item to provide compensation of dynamic magnetic field. Its main target is the strong field variations on the order of $\sim 10\,\mu$T. This will increase potential up time of the EDM measurements. On-site tests in the commissioning phase of AMC should also be performed.
 \end{itemize}
 
 \begin{table}[hbt]
@@ -65,10 +65,10 @@ Based on the above discussions, the purposes of the AMC are
  & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline\hline 
 Static background field  & $\approx62\,\mu$T & $\approx 350\,\mu$T                       \\ \hline
 Background field fluctuations  $\sigma_{|\mathbf{B}|}(100\,\mathrm{s})$ & $\approx 1\,\mathrm{nT}$ (night), $\approx 80\,\mathrm{nT}$ (day) & $\lesssim 80\,\mathrm{nT}$ \\ \hline
-Occasional variations    & $\lesssim30\,\mu$T   & $\lesssim 100\,\mu$T            \\ \hline
+Occasional variations    & $\lesssim30\,\mu$T   & $\lesssim 50\,\mu$T            \\ \hline
  MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$ (planned)  \\ \hline 
 \end{tabular}
-\caption{List of typical numbers characterizing the magnetic field environment of the PSI nEDM experiment and the TUCAN are in TRIUMF Meson Hall. Typical values of the magnetic of the static background field, the magnetic field fluctuations evaluated by the Allan deviation with the averaging time of 100\,s, Typical amplitudes of occasional magnetic field variations, the quasi-static shielding factor of MSR. The numbers for the PSI experiment are based on [Afach2014, Franke2013]. Those of TUCAN are based on [Sarte2013] and recent measurements discussed in [ref]. 
+\caption{List of typical numbers characterizing the magnetic field environment of the PSI nEDM experiment and the TUCAN area in TRIUMF Meson Hall. Typical values of the magnetic of the static background field, the magnetic field fluctuations evaluated by the Allan deviation with the averaging time of 100\,s, Typical amplitudes of occasional magnetic field variations, the quasi-static shielding factor of MSR. The numbers for the PSI experiment are based on [Afach2014, Franke2013]. Those of TUCAN are based on [Sarte2013] and recent measurements discussed in Section \ref{sec:amc_recent}. 
 }
 \label{tab:amc_comparaion}
 \end{table}
@@ -78,47 +78,35 @@ Occasional variations    & $\lesssim30\,\mu$T   & $\lesssim 100\,\mu$T          
 The key requirement specifications on the performance of AMC are stated below:
 
 \begin{RSenumerate}[resume]
-\item    The AMC static magnetic field compensation should reduce the field surrounding MSR such that $|\mathbf{B}|<0.1\,$T in the outermost layer of MSR.
-\label{RS:amc_static}
-
+\item    The static magnetic field compensation of AMC should reduce the field surrounding MSR such that  $|\mathbf{B}|<0.1\,$T is satisfied in the mu-metal layers of MSR. \label{RS:amc_rs_sta}
 \begin{itemize}
     \item[\textbf{Rationale:}]  The saturation magnetic induction of mu-metal is about $ 0.7\,$T. We require $|\mathbf{B}|<0.1\,$T  in order to have a large enough safety margin.
     \item[\textbf{Test:}] In defining the geometries of the coils, FEA simulations are essential which include a realistic background field, MSR, and the compensation coils to confirm that the requirement is satisfied. 
-    
-\end{itemize}
- \item The aimed compensation of the dynamic compensation is a factor of 10 for field variations on the order of $\sim 10\,\mu$T.
- \begin{itemize}
-    \item[\textbf{Rationale:}]  (The threshold of where we need degaussing is not well known, but a factor significant reduction will help, this is also a realistic number)
 \end{itemize}
 
-  \item The target of the static and dynamic compensation should be a  volume which contains the parts moved by opening or closing of the door of MSR [ref, figure in MSR section] \label{RS:amc_volume}
+ \item The dynamic compensation of AMC should compensate the external field variations on the  order of $\sim 10\,\mu$T by a factor of $\approx 10$ when they are experienced by MSR. \label{RS:amc_rs_dyn}
  \begin{itemize}
-    \item[\textbf{Rationale:}] So that the parts of MSR moved by opening/closing do not become saturated. This will be necessary for operation as well as construction of MSR. 
-    
+    \item[\textbf{Rationale:}] 
+    There are not many preceding studies discusssing the threshold above which  a given shield needs deguassing. However, the reduction of a factor $\sim 10$ would significantly lessen the influence of the perturbations to MSR. This is also a realistic aim, regarding the preceding work by PSI [Afach 2014]. 
+    \item[\textbf{Test:}] 
+    To achieve this, the spatial and time properties of the target magnetic field variations are important factors. The coils should be designed based on the measured properties. 
 \end{itemize}
- 
 
+  \item The target of the static and dynamic compensation of AMC should include  a  volume which contains the parts of MSR which are moved by opening or closing of the door of MSR [ref, figure in MSR section]\label{RS:amc_rs_volume}
+ \begin{itemize}
+    \item[\textbf{Rationale:}] In order to prevent saturation of these parts.  This will be required for operation as well as commissioning of MSR. 
+\end{itemize}
 \end{RSenumerate}
 
-We are still on the way of the concept design, the hardware requirements are not clarified  on this stage. To list some which are known at this point: 
-
-\begin{RSenumerate}[resume]
-\item The structure of AMC should not interfere with other apparatus in the area, according  to the latest layout of the assembly of the EDM apparatusv (December 2019), this volume would be **m x **m x**m 
-\item 
-
-\end{RSenumerate}
-
-Some other hardware requirements should include, response time of the system which would constrain the inductance of the coils and switching time of the power supplies, an adequate rate and accuracy for the readout of the magnetometers, etc.. They will be clarified as the concept design proceeds. 
-
-
-
+The subsystem is still in the phase of concept design, therefore  the hardware requirements have not been clarified yet. 
+They should include, for example, space requirements in order not to interfere the other subsystems, the response times of the system which would constrain the inductances of the coils and switching times of the power supplies, and an adequate rate and accuracy for the readout of the magnetometers. They will be detailed as the concept design proceeds. 
 
 
 \subsubsection{Status of the concept design}
 \subsubsection*{Feasibility of the static compensation}
 (FEA simulation of a simple homogeneous background and Helmholtz coil pair compensating it, say that the realistic field map is required for design of the actual system)
 
-\subsubsection*{Recent magnetic field measurements in Meson Hall}
+\subsubsection*{Recent magnetic field measurements in Meson Hall}\label{sec:amc_recent}
 (explain the motivations, show the map and coordinate definition)
 \subsubsection*{Characterization of the static background field}
 (show the plots, above $\sim$1 m from the floor, the z component is almost constant)
