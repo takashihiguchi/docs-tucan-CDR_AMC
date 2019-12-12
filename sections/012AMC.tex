@@ -131,7 +131,6 @@ The  measurement campaign was performed for  three purposes below :
 \end{itemize}
 The layout of the measurements is shown in Fig.\,\ref{fig:amc_layout}. The coordinate system $(x,y,z)$ was defined to be used throughout the measurement campaign. 
 For characterization of the background field, the grid with 40\,cm intervals is defined as shown in the figure. The field in this volume was mapped by translating the position of a triaxial fluxgate magnetometer over the grid. The mapped volume had the maximum height of 3.89\,m from the  floor and thus contained about 74\% of the planned volume of MSR. 
-
  \begin{figure}[htb!]
      \centering
      \includegraphics[width=.9\textwidth]{graphics/AMC/Layout_CDR.pdf}
@@ -141,12 +140,7 @@ For characterization of the background field, the grid with 40\,cm intervals is 
      \label{fig:amc_layout}
  \end{figure}
  
-To characterize the field variations caused by the crane motions, six triaxial fluxgate magnetometers were placed at positions indicated by the blue squares in the layout of  Fig.\,\ref{fig:amc_layout}. They measured the magnetic field while the crane was operated above the area.  Each of the three possible patterns of motions below were tested\footnote{For definition of the parts \textit{bridge} and \textit{trolley} of a bridge crane and their motions, see, for example,  \url{https://www.gruasyaparejos.com/en/overhead-crane/}.  The directions of the bridge- and the trolley motions of the crane in Meson Hall are indicated by the black arrows in  Fig.\,\ref{fig:amc_layout}.}: 
-\begin{itemize}
-\item the bridge motions  
-\item the trolley motions 
-\item lowering and rising the hook.
-\end{itemize}
+To characterize the field variations caused by the crane motions, six triaxial fluxgate magnetometers were placed at positions indicated by the blue squares in the layout of  Fig.\,\ref{fig:amc_layout}. They measured the magnetic field while the crane was operated above the area.  Each of the three possible patterns of motions of the crane: the bridge motions,  the bridge motions and lowering and rising the hook, were tested\footnote{For definition of the parts \textit{bridge} and \textit{trolley} of a bridge crane and their motions, see, for example,  \url{https://www.gruasyaparejos.com/en/overhead-crane/}.  The directions of the bridge- and the trolley motions of the crane in Meson Hall are indicated by the black arrows in  Fig.\,\ref{fig:amc_layout}.}: 
 The hook was lowered and then raised at two spots in the area. Their approximate positions marked by the red circles in the layout. 
 
 The background magnetic field fluctuations in Meson Hall were evaluated from data of a triaxial fluxgate magnetometer placed at a fixed location $(x,y,z) \approx (-0.2\,\mathrm{m}, -2.0\,\mathrm{m}, 2.98\,\mathrm{m})$ marked by the green 'x' in Fig.\,\ref{fig:amc_layout}.
@@ -156,9 +150,12 @@ The background magnetic field fluctuations in Meson Hall were evaluated from dat
 
 \subsubsection*{Characteristics of the static background field}
 Fig.\,\ref{fig:amc_B-map_cut} and \ref{fig:amc_B-map_3D} show the spatial distribution of each component of the static background field obtained by the mapping.
-Fig.\,\ref{fig:amc_B-map_cut} shows a two-dimensional cut view of  three-dimensional maps at a plane $x=0.182\,\mathrm{m}$. 
-
-
+Fig.\,\ref{fig:amc_B-map_cut} shows a two-dimensional cut view of  three-dimensional maps at a plane $x=0.182\,\mathrm{m}$.  Some observations which can made from these results are 
+\begin{itemize}
+\item The field is about $|\mathbf{B}|\approx 350\,\mu$T at strongest points.
+\item The spatial property of the field can be understood as a combination of the cyclotron stray field and local fields from the floor. At heights $z \gtrsim 1.5\,\mathrm{m} $, the contribution from the cyclotron field is dominant,  where  each of the field components can be expressed as a smooth function of the position. The localities observed near the floor is 
+\item At height $z>1.5\,\mathrm{m}$ the dominant field component is the downward $z$ component  $B_{z}\approx -240\mu$T.
+\end{itemize}
 
 \begin{figure}[htb!]
     \centering
@@ -167,11 +164,11 @@ Fig.\,\ref{fig:amc_B-map_cut} shows a two-dimensional cut view of  three-dimensi
     \label{fig:amc_B-map_cut}
     \vspace{1.5em}
     \includegraphics[width=1.02\textwidth]{graphics/AMC/B-field_3D.png}
-    \caption{Three-dimensional color plots of each component of the static background  field. The interpolation as shown in Fig.\,\ref{fig:amc_B-map_cut} is used to estimate field at positions not measured in the actual measurements. }
+    \caption{Three-dimensional color plots of each component of the static background  field. Strength of magnetic field on a few planes of $z=$\,const. is shown in the color scale. The interpolation as shown in Fig.\,\ref{fig:amc_B-map_cut} is used to estimate field at positions in between points measured in the actual measurements. }
     \label{fig:amc_B-map_3D}
 \end{figure}
 
-(show the plots, above $\sim$1 m from the floor, the z component is almost constant)
+
 \subsubsection*{Characterization of the field variations caused by the overhead crane}
 (Crane variations characterized by sensors fixed at multiple locations
 \begin{itemize}
