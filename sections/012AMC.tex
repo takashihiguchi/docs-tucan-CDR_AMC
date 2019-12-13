@@ -65,7 +65,7 @@ Based on the above discussions, the purposes of the AMC are
  & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline\hline 
 Static background field  & $\approx62\,\mu$T & $\approx 350\,\mu$T                       \\ \hline
 Background field fluctuations  $\sigma_{|\mathbf{B}|}(100\,\mathrm{s})$ & $\approx 1\,\mathrm{nT}$ (night), $\approx 80\,\mathrm{nT}$ (day) & $\lesssim 80\,\mathrm{nT}$ \\ \hline
-Occasional variations    & $\lesssim30\,\mu$T   & $\lesssim 50\,\mu$T            \\ \hline
+Occasional variations    & $\lesssim30\,\mu$T   & $\lesssim 10\,\mu$T            \\ \hline
  MSR shielding  factor       &    $\sim 10^4$   &   $\sim 10^5$ (planned)  \\ \hline 
 \end{tabular}
 \caption{List of typical numbers characterizing the magnetic field environment of the PSI nEDM experimental site and the TUCAN area in TRIUMF Meson Hall. The table consists of typical values of: the static background field, the magnetic field fluctuations evaluated by the Allan deviation with an averaging time of 100\,s, typical amplitudes of occasional magnetic field variations, the quasi-static shielding factor of MSR. The values of the PSI experiment are based on [Afach2014, Franke2013, Baker2014]. Those of TUCAN are based on [Sarte2013] and recent measurements discussed in Section \ref{sec:amc_recent}. 
@@ -139,8 +139,10 @@ For characterization of the background field, the grid with 40\,cm intervals is 
      The black arrows indicate the direction of the TRIUMF cyclotron, directions of  two motions of the overhead bridge crane in the hall, the direction of UCN extraction from the source to the experimental area.  }
      \label{fig:amc_layout}
  \end{figure}
- 
-To characterize the field variations caused by the crane motions, six triaxial fluxgate magnetometers were placed at positions indicated by the blue squares in the layout of  Fig.\,\ref{fig:amc_layout}. They measured the magnetic field while the crane was operated above the area.  Each of the three possible patterns of motions of the crane: the bridge motions,  the bridge motions and lowering and rising the hook, were tested\footnote{For definition of the parts \textit{bridge} and \textit{trolley} of a bridge crane and their motions, see, for example,  \url{https://www.gruasyaparejos.com/en/overhead-crane/}.  The directions of the bridge- and the trolley motions of the crane in Meson Hall are indicated by the black arrows in  Fig.\,\ref{fig:amc_layout}.}: 
+ The sensors 1--6 in Fig.\,\ref{fig:amc_layout} indicate the positions of the fluxgate magnetometers placed to characterize the field variations caused by the crane motions. 
+% To characterize the field variations caused by the crane motions, six triaxial fluxgate magnetometers were placed at positions indicated by the blue squares in the layout of  Fig.\,\ref{fig:amc_layout}. 
+%They measured the magnetic field while the crane was operated above the area.  
+Each of the three possible patterns of motions of the crane: the bridge motions,  the bridge motions and lowering and rising the hook, were tested\footnote{For definition of the parts \textit{bridge} and \textit{trolley} of a bridge crane and their motions, see, for example,  \url{https://www.gruasyaparejos.com/en/overhead-crane/}.  The directions of the bridge- and the trolley motions of the crane in Meson Hall are indicated by the black arrows in  Fig.\,\ref{fig:amc_layout}.}: 
 The hook was lowered and then raised at two spots in the area. Their approximate positions marked by the red circles in the layout. 
 
 The background magnetic field fluctuations in Meson Hall were evaluated from data of a triaxial fluxgate magnetometer placed at a fixed location $(x,y,z) \approx (-0.2\,\mathrm{m}, -2.0\,\mathrm{m}, 2.98\,\mathrm{m})$ marked by the green 'x' in Fig.\,\ref{fig:amc_layout}.
@@ -149,33 +151,46 @@ The background magnetic field fluctuations in Meson Hall were evaluated from dat
 
 
 \subsubsection*{Characteristics of the static background field}
-Fig.\,\ref{fig:amc_B-map_cut} and \ref{fig:amc_B-map_3D} show the spatial distribution of each component of the static background field obtained by the mapping.
-Fig.\,\ref{fig:amc_B-map_cut} shows a two-dimensional cut view of  three-dimensional maps at a plane $x=0.182\,\mathrm{m}$.  Some observations which can made from these results are 
+Fig.\,\ref{fig:amc_B-map_cut} and \ref{fig:amc_B-map_3D} show the  maps of the 
+static background field obtained by the measurement. Fig.\,\ref{fig:amc_B-map_cut} shows a two-dimensional cut view of  three-dimensional maps at a plane $x=0.182\,\mathrm{m}$.  Some observations which can be made from these results are 
 \begin{itemize}
-\item The field is about $|\mathbf{B}|\approx 350\,\mu$T at strongest points.
-\item The spatial property of the field can be understood as a combination of the cyclotron stray field and local fields from the floor. At heights $z \gtrsim 1.5\,\mathrm{m} $, the contribution from the cyclotron field is dominant,  where  each of the field components can be expressed as a smooth function of the position. The localities observed near the floor is 
-\item At height $z>1.5\,\mathrm{m}$ the dominant field component is the downward $z$ component  $B_{z}\approx -240\mu$T.
+\item The field is about $|\mathbf{B}|\approx 350\,\mu$T in the strongest areas.
+\item The spatial property of the field can be understood as a combination of the cyclotron stray field and local fields from the floor. At heights $z \gtrsim 1.5\,\mathrm{m} $, the contribution from the cyclotron field is dominant,  where  each of the field components can be expressed as a smooth function of the position. The localities observed near the floor is likely due to magnetized steel reinforcement bars underneath the concrete floor.  
+\item At height $z>1.5\,\mathrm{m}$, the dominant field component is the downward $z$ component  $B_{z}\approx -240\mu$T.
 \end{itemize}
 
 \begin{figure}[htb!]
     \centering
     \includegraphics[width=\textwidth]{graphics/AMC/B-field_cut_CDR.pdf}
-    \caption{Result of the mapping of the static background field. A two-dimensional cut of the three-dimensional map of the field $(B_{x}, B_{y}, B_{z})$ at a cut plane  $x=0.182\,\mathrm{m}$ is shown. The square  markers represent the data acquired by the actual measurements, and the circle dots show data obtained by interpolating the measured data points.}
+    \caption{Results of the mapping of the static background field. A two-dimensional cut of the three-dimensional map of the field $(B_{x}, B_{y}, B_{z})$ at a cut plane  $x=0.182\,\mathrm{m}$ is shown. The square  markers represent the data acquired by the actual measurements, and the circle dots show data obtained by interpolating the measured data points.}
     \label{fig:amc_B-map_cut}
     \vspace{1.5em}
     \includegraphics[width=1.02\textwidth]{graphics/AMC/B-field_3D.png}
-    \caption{Three-dimensional color plots of each component of the static background  field. Strength of magnetic field on a few planes of $z=$\,const. is shown in the color scale. The interpolation as shown in Fig.\,\ref{fig:amc_B-map_cut} is used to estimate field at positions in between points measured in the actual measurements. }
+    \caption{Three-dimensional color plots of each component of the static background  field $(B_{x}, B_{y}, B_{z})$. The field component at each point is expressed in the color scale. The interpolation as shown in Fig.\,\ref{fig:amc_B-map_cut} is used to estimate field at positions in between points measured in the actual measurements. }
     \label{fig:amc_B-map_3D}
 \end{figure}
 
 
 \subsubsection*{Characterization of the field variations caused by the overhead crane}
-(Crane variations characterized by sensors fixed at multiple locations
+To characterize the field variation induced by the motions of the overhead crane, the field was monitored at the sensors at the six positions indicated in Fig.\,\ref{fig:amc_layout} while the crane was being operated.  In Fig.\,\ref{fig:amc_crane}., the field measured by the six sneers are shown as functions of time. The crane operations during the measurement are indicated in the figure. First, the crane was moved in $\pm x$ direction by moving its bridge. Next, the trolley of the crane was moved in $\pm y$ direction. Lastly, the influence of the hook of the crane was tested by lowering and then rising the hook at the two locations indicated in Fig.\,\ref{fig:amc_layout}, first at location (A), then at location (B). 
+
+
+In Fig.\,\ref{fig:amc_crane}\,(a), the field variations measured by the six fluxgate sensors are shown as a function of time for the entire period of the test. The offset of each sensor readout at the beginning of the test is subtracted to show the relative field variations experienced bye each sensor. 
 \begin{itemize}
-    \item Field variations created by bridge is homogeneous (<1muT/m) and not so large < 10muT
-    \item Field near the hook even goes up to 100 $\mu$T for the nearest sensor (**m?)
+\item The maximum field variations observed was about $-250\,\mu$T on $B_{x}$ component of sensor 6 when the hook was lowered right next to the sensor. This is not of much concern in view of actual operations of MSR and AMC, since the operation of the hook would take place only in the maintenance period of TUCAN. It can also be found that the effects of the hook is highly local; for a sensor 2, placed away by 80\,cm from the hook location, the variations are $<\left|30\,\mu\mathrm{T}\right|$ for each component. 
+\item The trolley motions were found to produce much smaller variations than the bridge motions, and were $<|1\,\mu\mathrm{T}|$ for each component. 
+\item What matters the most among the three types of motions is the bridge motions along the $x$ axis. The zoomed-in plots in this time window are shown in Fig.\,\ref{fig:amc_crane}\,(b).  The locations of the bridge at different times are annotated in the boxes in the figure. It can be seen that the field variations produced is reasonably reproducible and adds $\Delta \mathbf{B}\approx (+6\,\mu\mathrm{T}, 0\,\mu\mathrm{T},+2\,\mu\mathrm{T})$ when the bridge is right above the TUCAN area. The inhomogeneity of the field is evaluated to be  $\Delta B_{i}/\Delta x_{j} < \left|1.7 \mu \mathrm{T}/ \mathrm{m}\right|\,\,( B_{i}= \{B_{x}, B_{y}, B_{z}\}, x_{j}=\{x,y,z\})$.
 \end{itemize}
-As the variations of the crane is one of the main target of the dynamic compensation, these characterizations will be considered in designing the coils for dynamic compensation.)
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=\textwidth]{graphics/AMC/crane_test.pdf}
+\caption{Characterization of magnetic field variations caused by the crane motions. The variations of the field were monitored by the six triaxial fluxgate magnetometers whose positions shown in Fig.\,\ref{fig:amc_layout}. The offset of each sensor reading at the beginning of the test is subtracted to show the relative field variations at each location. 
+(a)  The annotated boxes indicate the type of crane motions tested at each time window. The bridge motions in $\pm x$ direction, the trolley motions in $\pm y$ direction, and vertical hook motions were tested at location (A) and then at (B) (see Fig.\,\ref{fig:amc_layout}) were tested. (b) The zoomed-in plots in the time window of the bridge motions. Before starting the test, the crane was parked at the downstream ($+x$) side of the TUCAN area. The crane passed over the area and parked at the upstream ($-x$) side of the area
+(see Fig.\,\ref{fig:amc_layout}).
+} 
+\label{fig:amc_crane}
+\end{figure}
 %\begin{table}[tb]
 %\centering
 %\caption{Parameters characterizing the magnetic environment of the TUCAN apparatus in the TRIUMF Meson Hall, listed in comparison of those of PSI-nEDM experiment.  [Afash]
@@ -191,12 +206,18 @@ As the variations of the crane is one of the main target of the dynamic compensa
 %\end{tabular}
 %\end{table}
 
+\subsubsection*{Characterization of background magnetic field fluctuations}
+(This content will be added later)
 
 
 
 \subsection{Timeline}
-(aiming to complete concept design by March 2020)
-
+As of December 2019, the AMC subsystem is still in the phase of concept design. To decide on the geometries of the coils for static and dynamic field compensations, the following studies are underway:
+\begin{itemize}
+\item Search of  optimum coil geometries which compensate the measured magnetic field map.
+\item Implementation of the spatial distribution of the measured field map in Opera-3D. This will be done by finding a magnetic scalar potential which produces the measured map with enough precision, by decomposition of the map with Legendre polynomials. 
+\end{itemize}
+We aim to complete these studies by the end of March, then the hardware design and development can be started.
 
 
 % \subsection{DAQ/AMC Interface Requirements}
