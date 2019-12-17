@@ -99,7 +99,7 @@ The key requirements specifications on the performance of AMC are stated below:
 \end{itemize}
 \end{RSenumerate}
 
-The AMC subsystem is still in the phase of concept design, therefore its hardware requirements have not been clarified yet. 
+The AMC subsystem is still in the phase of conceptual design, therefore its hardware requirements have not been clarified yet. 
 They should include, for example, space requirements in order not to interfere with the other subsystems, the response times of the system which would constrain the inductance of the coils and switching times of the power supplies, and an adequate rate and accuracy for the readout of the magnetometers. They will be detailed as the design work proceeds. 
 
 \subsection{Developmental works for the design of the compensation system}
@@ -182,7 +182,7 @@ In Fig.\,\ref{fig:amc_crane}, the magnetic field measured by the six fluxgate se
 
 To summarize the major features of the crane-induced field variations,
 \begin{itemize}
-\item The maximum field variations observed were about $\Delta B_{x}\approx -250\,\mu$T on sensor 6 when the hook was lowered right next to the sensor. This is not of much concern in view of actual operations of MSR and AMC, because the operation of the hook would take place only in the maintenance period of TUCAN. It can also be found that the effects of the hook are highly local; e.g. for the hook motions at location (A), the variations are reduced to $<\left|30\,\mu\mathrm{T}\right|$ for each component when they were experienced by sensor 2, placed away by 80\,cm from the hook location.
+\item The maximum field variations observed were about $\Delta B_{x}\approx -250\,\mu$T on sensor 6 when the hook was lowered in a neighborhood of the sensor at a distance of $\approx 30\,$cm. This is not of much concern in view of actual operations of MSR and AMC, because the operation of the hook would take place only in the maintenance period of TUCAN. It can also be found that the effects of the hook are highly local; e.g. for the hook motions at location (A), the variations are reduced to $<\left|30\,\mu\mathrm{T}\right|$ for each component when they were experienced by sensor 2, placed away by $\approx 80\,$cm from the hook location.
 \item The trolley motions were found to produce much smaller variations than the bridge motions and were $<|1\,\mu\mathrm{T}|$ for each component. 
 \item What matters the most among the three types of motions is the bridge motions along the $x$ axis. The zoomed-in plots in this time window are shown in Fig.\,\ref{fig:amc_crane}\,(b). The locations of the bridge at different times are annotated in the boxes in the figure. It can be seen that the field variations produced by different positions of the bridge are reasonably reproducible, and add $\Delta \mathbf{B}\approx (+6\,\mu\mathrm{T}, 0\,\mu\mathrm{T},+2\,\mu\mathrm{T})$ when the bridge is right above the TUCAN area. The variations are also rather homogeneous. Their inhomogeneities are evaluated to be $\Delta B_{i}/\Delta x_{j} < \left|2 \mu \mathrm{T}/ \mathrm{m}\right|$ (for $B_{i}= \{B_{x}, B_{y}, B_{z}\}, x_{j}=\{x,y,z\})$.
 \end{itemize}
@@ -216,7 +216,7 @@ To summarize the major features of the crane-induced field variations,
 
 
 \subsection{Timeline}
-As of December 2019, the AMC subsystem is still in the phase of concept design. To decide on the geometries of the coils for static and dynamic field compensations, the following studies are underway:
+As of December 2019, the AMC subsystem is still in the phase of conceptual design. To decide on the geometries of the coils for static and dynamic field compensations, the following studies are underway:
 \begin{itemize}
 \item Search of optimum coil geometries that compensate for the measured magnetic field map.
 \item Implementation of the spatial distribution of the measured field map in Opera-3D. This will be done by finding a magnetic scalar potential which produces the measured map with enough precision, by decomposition of the map with Legendre polynomials. 
