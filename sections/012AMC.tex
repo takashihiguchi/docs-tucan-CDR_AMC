@@ -24,20 +24,6 @@ The location of the nEDM spectrometer in an accelerator facility necessitates a 
 
 The Ambient Magnetic-field Compensation (AMC) subsystem will consist of a set of coils and magnetometers to provide static and dynamic magnetic field compensation in the exterior of MSR to ensure the shielding performance of MSR and increase possible uptime of the EDM measurements. This section specifies the key requirements of  AMC and summarizes developmental works performed in this context.  
 
-%\begin{figure}[htb]
-%\centering
-%%trim={<left> <lower> <right> <upper>}
-%\includegraphics[width=0.99\textwidth, trim = {0cm 0cm 3cm 0cm},clip]{./graphics/AMC/figurename}
-%\caption{.}
-%\label{fig:SourceUCNhandlingcomponents}
-%\end{figure}
-%\begin{figure}[htb]
-%\centering
-%%trim={<left> <lower> <right> <upper>}
-%\includegraphics[width=0.8\textwidth, trim = {5cm 0cm 6cm 0cm},clip]{./graphics/UCNHandlingEDM}
-%\caption{}
-%\label{fig:AMC-}
-%\end{figure}
 
 
 
@@ -182,7 +168,7 @@ In Fig.\,\ref{fig:amc_crane}, the magnetic field measured by the six fluxgate se
 
 To summarize the major features of the crane-induced field variations,
 \begin{itemize}
-\item The maximum field variations observed were about $\Delta B_{x}\approx -250\,\mu$T on sensor 6 when the hook was lowered in a neighborhood of the sensor at a distance of $\approx 30\,$cm. This is not of much concern in view of actual operations of MSR and AMC, because the operation of the hook would take place only in the maintenance period of TUCAN. It can also be found that the effects of the hook are highly local; e.g. for the hook motions at location (A), the variations are reduced to $<\left|30\,\mu\mathrm{T}\right|$ for each component when they were experienced by sensor 2, placed away by $\approx 80\,$cm from the hook location.
+\item The maximum field variations observed were about $\Delta B_{x}\approx -250\,\mu$T on sensor 6 when the hook was lowered in a neighborhood of the sensor at a distance of $\approx 30\,$cm. This is not of much concern in view of actual operations of MSR and AMC, because the operation of the hook would take place only in the maintenance period of TUCAN. It can also be found that the effects of the hook are highly local; e.g. for the hook motions at location (A), the variations are reduced to $<\left|30\,\mu\mathrm{T}\right|$ for each component when they were experienced by sensor 2, which was placed away from the hook location by $\approx 80\,$cm.
 \item The trolley motions were found to produce much smaller variations than the bridge motions and were $<|1\,\mu\mathrm{T}|$ for each component. 
 \item What matters the most among the three types of motions is the bridge motions along the $x$ axis. The zoomed-in plots in this time window are shown in Fig.\,\ref{fig:amc_crane}\,(b). The locations of the bridge at different times are annotated in the boxes in the figure. It can be seen that the field variations produced by different positions of the bridge are reasonably reproducible, and add $\Delta \mathbf{B}\approx (+6\,\mu\mathrm{T}, 0\,\mu\mathrm{T},+2\,\mu\mathrm{T})$ when the bridge is right above the TUCAN area. The variations are also rather homogeneous. Their inhomogeneities are evaluated to be $\Delta B_{i}/\Delta x_{j} < \left|2 \mu \mathrm{T}/ \mathrm{m}\right|$ (for $B_{i}= \{B_{x}, B_{y}, B_{z}\}, x_{j}=\{x,y,z\})$.
 \end{itemize}
@@ -211,23 +197,44 @@ To summarize the major features of the crane-induced field variations,
 %\end{table}
 
 \paragraph*{Characterization of background magnetic field fluctuations}
-\begin{table}[tb!]
-\centering 
-\begin{tabular}{|l||r|r|r|}
-\hline
+Among the sensors shown in \ref{fig:amc_layout}, sensors 1--5 were fixed on the same locations since September 2019. The magnetic field in the area has been monitored by these five sensors for a few months with a constant sampling rate of 1 Hz\footnote{The raw data sampling rate was set to be 200 Hz in order to eliminate high-frequency noise. Every second, the sensor data acquisition  system averages 200 measurements to obtain one data point.   }. 
+Typical magnetic field fluctuations were evaluated from this data in a time window of 2019-11-16 11:00--2019-12-15 20:00. Shown in \ref{fig:amc_stability-overview,fig:amc_stability-day-night} are results of the evaluation for data from sensor 4. 
 
- \multicolumn{1}{|c||}{Time window}  & \multicolumn{1}{c|}{$\sigma_{A,x}(100\,\mathrm{s})$\,(nT)}& \multicolumn{1}{c|}{$\sigma_{A,y}(100\,\mathrm{s})$\,(nT) } &
-\multicolumn{1}{c|}{$\sigma_{A,z}(100\,\mathrm{s})$\,(nT) }\\ \hline \hline 
-(i) & 1.0\,(1) & 1.2\,(1) & 1.4\,(2) \\ 
-(ii) & 22\,(3) & 50\,(6) & 66\,(8) \\
-(iii) & 18\,(2) & 39\,(5) & 70\,(8) \\
-(iv) & 35\,(5) & 58\,(9) & 18\,(3) \\ 
-\hline 
-\end{tabular}
-\caption{
-}
-\label{tab:amc_datasets}
-\end{table}
+(More explanations of the figures will be added by Monday ... )
+
+Typical magnetic field fluctuations in Meson Hall was evaluated using 
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=.8\textwidth]{graphics/AMC/stability_overview.png}
+\caption{default}
+\label{fig:amc_stability-overview}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=.9\textwidth]{graphics/AMC/stability_day_night_f3_100s.pdf}
+\caption{default}
+\label{fig:amc_stability-day-night}
+\end{figure}
+
+
+%\begin{table}[tb!]
+%\centering 
+%\begin{tabular}{|l||r|r|r|}
+%\hline
+%
+% \multicolumn{1}{|c||}{Time window}  & \multicolumn{1}{c|}{$\sigma_{A,x}(100\,\mathrm{s})$\,(nT)}& \multicolumn{1}{c|}{$\sigma_{A,y}(100\,\mathrm{s})$\,(nT) } &
+%\multicolumn{1}{c|}{$\sigma_{A,z}(100\,\mathrm{s})$\,(nT) }\\ \hline \hline 
+%(i) & 1.0\,(1) & 1.2\,(1) & 1.4\,(2) \\ 
+%(ii) & 22\,(3) & 50\,(6) & 66\,(8) \\
+%(iii) & 18\,(2) & 39\,(5) & 70\,(8) \\
+%(iv) & 35\,(5) & 58\,(9) & 18\,(3) \\ 
+%\hline 
+%\end{tabular}
+%\caption{
+%}
+%\label{tab:amc_datasets}
+%\end{table}
 
 
 
