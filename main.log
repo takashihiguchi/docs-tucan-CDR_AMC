@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.20)  24 DEC 2019 07:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.20)  11 JAN 2020 22:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1763,9 +1763,22 @@ LaTeX Font Info:    Font shape `T1/fnc/bx/n' in size <12> not available
 (Font)              Font shape `T1/fnc/b/n' tried instead on input line 22.
 LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
 (Font)              scaled to size 11.15991pt on input line 22.
+LaTeX Font Info:    Font shape `T1/fnc/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/fnc/b/n' tried instead on input line 23.
+LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
+(Font)              scaled to size 10.18341pt on input line 23.
+
+
+LaTeX Warning: Reference `msr:FEA' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Citation `Afach2014' on page 1 undefined on input line 48.
+
+
+LaTeX Warning: Citation `Afach2014' on page 1 undefined on input line 52.
+
 LaTeX Font Info:    Trying to load font information for TS1+fnc on input line 5
 6.
-
 (/usr/local/texlive/2018/texmf-dist/tex/latex/fouriernc/ts1fnc.fd
 File: ts1fnc.fd 2005/12/13 font definitions for TS1/fnc.
 )
@@ -1775,11 +1788,34 @@ LaTeX Font Info:    Font shape `TS1/fnc/m/n' will be
 
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/fnc/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/fnc/b/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
-(Font)              scaled to size 10.18341pt on input line 65.
- [2]
+
+LaTeX Warning: Citation `Afach2014' on page 2 undefined on input line 72.
+
+
+LaTeX Warning: Citation `Fra:phd' on page 2 undefined on input line 72.
+
+
+LaTeX Warning: Citation `baker2014apparatus' on page 2 undefined on input line 
+72.
+
+
+LaTeX Warning: Citation `Afach2014' on page 2 undefined on input line 72.
+
+
+LaTeX Warning: Citation `Fra:phd' on page 2 undefined on input line 72.
+
+
+LaTeX Warning: Citation `baker2014apparatus' on page 2 undefined on input line 
+72.
+
+
+LaTeX Warning: Citation `Afach 2014' on page 2 undefined on input line 90.
+
+
+LaTeX Warning: Reference `MSR:mesonhalltop' on page 2 undefined on input line 9
+5.
+
+[2]
 <graphics/AMC/feasibility.png, id=86, 897.77408pt x 351.41287pt>
 File: graphics/AMC/feasibility.png Graphic file (type png)
 <use graphics/AMC/feasibility.png>
@@ -1857,13 +1893,20 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 46927CBA05D85B48B4A30DB89597033F;658.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
- 43666 strings out of 492167
- 983755 string characters out of 6125388
- 1174892 words of memory out of 5000000
- 47320 multiletter control sequences out of 15000+600000
+ 43672 strings out of 492167
+ 983834 string characters out of 6125388
+ 1174893 words of memory out of 5000000
+ 47326 multiletter control sequences out of 15000+600000
  586917 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,12n,98p,1345b,823s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1878,7 +1921,7 @@ texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2018/tex
 mf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb>
-Output written on main.pdf (8 pages, 7566075 bytes).
+Output written on main.pdf (8 pages, 7566599 bytes).
 PDF statistics:
  9122 PDF objects out of 10688 (max. 8388607)
  8955 compressed objects within 90 object streams
