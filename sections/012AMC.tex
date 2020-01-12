@@ -50,7 +50,8 @@ Based on the above discussions, the goals of the AMC subsystem are summarized as
 
  & \multicolumn{1}{c|}{\textbf{PSI}} & \multicolumn{1}{c|}{\textbf{TUCAN}} \\ \hline\hline 
 Static background field & $\approx62\,\mu$T & $\approx 350\,\mu$T            \\ \hline
-Background field fluctuations $\sigma_{|\mathbf{B}|}(100\,\mathrm{s})$ & $\approx 1\,\mathrm{nT}$ (night), $\approx 80\,\mathrm{nT}$ (day) & $\lesssim 80\,\mathrm{nT}$ \\ \hline
+Background field fluctuations $\sigma_{|\mathbf{B}|}(100\,\mathrm{s})$ & $\approx 80\,\mathrm{nT}$ (day), $\approx 1\,\mathrm{nT}$ (night) & $\lesssim 145\,\mathrm{nT}$ (day), $\lesssim 7\,\mathrm{nT}$ (night)
+\\ \hline
 Occasional variations  & $\lesssim30\,\mu$T  & $\lesssim 10\,\mu$T      \\ \hline
  MSR shielding factor    &  $\sim 10^4$  &  $\sim 10^5$ (planned) \\ \hline 
 \end{tabular}
@@ -197,47 +198,44 @@ To summarize the major features of the crane-induced field variations,
 %\end{table}
 
 \paragraph*{Characterization of background magnetic field fluctuations}
-Among the sensors shown in \ref{fig:amc_layout}, sensors 1--5 were fixed on the same locations since September 2019. The magnetic field in the area has been monitored by these five sensors for a few months with a constant sampling rate of 1 Hz\footnote{The raw data sampling rate was set to be 200 Hz in order to eliminate high-frequency noise. Every second, the sensor data acquisition  system averages 200 measurements to obtain one data point.   }. 
-Typical magnetic field fluctuations were evaluated from this data in a time window of 2019-11-16 11:00--2019-12-15 20:00. Shown in \ref{fig:amc_stability-overview,fig:amc_stability-day-night} are results of the evaluation for data from sensor 4. 
-
-(More explanations of the figures will be added by Monday ... )
-
-Typical magnetic field fluctuations in Meson Hall was evaluated using 
-\begin{figure}[htbp]
+\begin{figure}[tbp]
 \centering 
-\includegraphics[width=.8\textwidth]{graphics/AMC/stability_overview.png}
-\caption{default}
+\includegraphics[width=.9\textwidth]{graphics/AMC/stability_overview.png}
+\caption{ (Left) Magnetic field $ (B_{x}, B_{y}, B_{z})$ monitored by sensor 4. The occasional spikes are induced by crane operations. (Right)  The 100-s Allan deviation of each magnetic field component $\sigma_{A,i} (100\,\mathrm{s})$ evaluated for one-hour time windows defined each hour.}
 \label{fig:amc_stability-overview}
 \end{figure}
+Among the sensors shown in \ref{fig:amc_layout}, sensors 1--5 were fixed on the same locations since September 2019. 
 
-\begin{figure}[htbp]
+The magnetic field in the area has been constantly monitored by these five sensors for a few months.  Typical background magnetic field fluctuations evaluated from the monitoring data are discussed below. 
+ 
+ The dataset used for this evaluation was recorded between 11:00 on November 16, 2019 and 20:00 on December 15, 2019. The data was recorded with a rate of 1\,Hz, each obtained from an average of 200 raw measurements to eliminate high-frequency noise. Among the five sensors each having three channels, results from those of sensor 4 are shown in this section.   In the left plots of Fig.\,\ref{fig:amc_stability-overview} the magnetic field during over the entire measurement period is shown for each magnetic feudal component. To evaluate the field stability, data was split into one-hour time windows. From data included in each time window, the Allan deviations at 100\,s averaging time $\sigma_{A,x}(100\,\mathrm{s}), \sigma_{A,y}(100\,\mathrm{s}), \sigma_{A,z}(100\,\mathrm{s})$ are evaluated for each hour. Occasionally,  DAQ failures caused the measurement interval longer than 1\,s. Time widows including significant samples of such outliers (152 among original 641 one-hour windows) are excluded from the Allan deviation evaluation. 
+The transients of the Allan deviations are shown in the right plots of Fig.\,\ref{fig:amc_stability-overview}.  The Allan deviations in a range $0<\sigma_{A,i} (100\,\mathrm{s})<1\mu$T are shown in the plots. The time windows  where $\sigma_{A,i} (100\,\mathrm{s})\geq 1\mu$T, which are obviously caused by crane operations,  are 57 among the evaluated 489 one-hour  time windows. 
+ 
+\begin{figure}[tbp]
 \centering 
-\includegraphics[width=.9\textwidth]{graphics/AMC/stability_day_night_f3_100s.pdf}
-\caption{default}
+\includegraphics[width=.98\textwidth]{graphics/AMC/stability_day_night_f3_100s.pdf}
+\caption{(Left) The magnetic field Allan deviations $\sigma_{A,i}(100\,\mathrm{s})$  shown in Fig.\,\ref{fig:amc_stability-overview} are shown as functions of hours in the day. (Middle) Histograms of  $\sigma_{A,i}(100\,\mathrm{s})$  for data in  daytime (07:00--19:00). (Right) Histograms of  $\sigma_{A,i}(100\,\mathrm{s})$  for data at night time  (19:00--07:00). }
 \label{fig:amc_stability-day-night}
 \end{figure}
 
+In the left column of  Fig.\,\ref{fig:amc_stability-day-night}, the Allan deviations $\sigma_{A,i} (100\,\mathrm{s})$ are plotted as functions of hour in a day. The deviations obtained for time windows on different dates are overlaid. It can be clearly seen that fluctuations during the day tend to be higher than at night. Defining daytime as 
+$07:00\leq t_{\mathrm{h}}<19:00$ and night time as $19:00\leq t_{\mathrm{h}}<7:00$ ($t_{\mathrm{h}}$: the hour in a day), the distributions of $\sigma_{A,i} (100\,\mathrm{s})$ are plotted in Fig.\,\ref{fig:amc_stability-day-night}, separately for daytime (the second column) and night time (the third column).  The right solid step lines in the histograms are the cumulative distributions with its axis on the right of the plots. The black dashed horizontal lines indicate 0.90 of the cumulative distribution. To acmes typical magnetic field fluctuations,  a threshold magnetic field $B_{\mathrm{th},i}$  is defined, where the sum of the bins satisfying $B<B_{\mathrm{th},i}$ occupy  90\% of the total bins.  The threshold $B_{\mathrm{th},i}$ for each component in day/night time is evaluated and listed in  
+Table\,\ref{tab:amc_stability}. From these results, typical background magnetic field  fluctuations are accessed as  $\mathrm{nT}$ in daytime, and $\lesssim 7\,\mathrm{nT}$ at night.
 
-%\begin{table}[tb!]
-%\centering 
-%\begin{tabular}{|l||r|r|r|}
-%\hline
-%
-% \multicolumn{1}{|c||}{Time window}  & \multicolumn{1}{c|}{$\sigma_{A,x}(100\,\mathrm{s})$\,(nT)}& \multicolumn{1}{c|}{$\sigma_{A,y}(100\,\mathrm{s})$\,(nT) } &
-%\multicolumn{1}{c|}{$\sigma_{A,z}(100\,\mathrm{s})$\,(nT) }\\ \hline \hline 
-%(i) & 1.0\,(1) & 1.2\,(1) & 1.4\,(2) \\ 
-%(ii) & 22\,(3) & 50\,(6) & 66\,(8) \\
-%(iii) & 18\,(2) & 39\,(5) & 70\,(8) \\
-%(iv) & 35\,(5) & 58\,(9) & 18\,(3) \\ 
-%\hline 
-%\end{tabular}
-%\caption{
-%}
-%\label{tab:amc_datasets}
-%\end{table}
-
-
-
+\begin{table}[tb!]
+\centering 
+\begin{tabular}{|l||c|c|}
+\hline
+ &\multicolumn{2}{c|}{90\% threshold $B_{\mathrm{th},I}$ }  \\ \hline
+ &Day & Night \\ \hline\hline 
+$B_{x}$ Allan deviation $\sigma_{A,x}(100\,\mathrm{s})$  & 28\,nT &    6\,nT     \\ \hline
+$B_{y}$ Allan deviation $\sigma_{A,y}(100\,\mathrm{s})$ & 50\,nT  & 6\,nT      \\ \hline
+$B_{z}$ Allan deviation $\sigma_{A,z}(100\,\mathrm{s})$ &130\,nT  & 2\,nT      \\ \hline
+\end{tabular}
+\caption{The threshold $B_{\mathrm{th},i}$ is a threshold below which 90\% of the total bins are included. 
+The thresholds are evaluated from each of the histograms in Fig.\,\ref{fig:amc_stability-day-night}.}
+\label{tab:amc_stability}
+\end{table}
 
 
 \subsection{Timeline}
